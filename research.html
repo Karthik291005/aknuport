@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research | Dr. Kalyani Dasari | AKNU</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --green: #1B4332; --green-dark: #0d2b1e; --green-mid: #2D6A4F; --green-light: #40916C;
+    --copper: #B87333; --copper-light: #D4956A; --copper-pale: #f0dcc8;
+    --cream: #F7F4F0; --white: #ffffff;
+    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-light: #6b6b6b;
+    --border: #ddd8d0; --shadow: 0 4px 24px rgba(27,67,50,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+
+  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
+  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; }
+  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
+  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
+  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
+  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
+  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+
+  .page-hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 3.5rem 1.5rem; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--copper-light); text-decoration: none; font-size: 0.82rem; }
+  .breadcrumb span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  .page-hero h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; font-weight: 700; }
+  .page-hero p { color: rgba(255,255,255,0.72); margin-top: 0.5rem; font-size: 1rem; max-width: 60ch; }
+
+  .content { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+
+  .research-item { display: grid; grid-template-columns: 360px 1fr; gap: 3rem; margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid var(--border); align-items: start; }
+  .research-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .research-item.reverse { direction: rtl; }
+  .research-item.reverse > * { direction: ltr; }
+  .research-img { border-radius: 12px; overflow: hidden; height: 260px; box-shadow: var(--shadow); background: var(--cream); }
+  .research-img img { width: 100%; height: 100%; object-fit: cover; }
+  .research-num { font-size: 0.72rem; color: var(--copper); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 0.5rem; }
+  .research-content h2 { font-family: 'Lora', serif; font-size: 1.6rem; color: var(--green); font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
+  .research-content p { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
+  .research-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .research-tag { background: var(--cream); color: var(--green); border: 1px solid var(--border); padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500; }
+
+  .projects-section { background: var(--cream); padding: 4rem 1.5rem; }
+  .projects-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header h2 { font-family: 'Lora', serif; font-size: 1.8rem; color: var(--green); font-weight: 700; margin-bottom: 0.5rem; }
+  .underline { width: 50px; height: 3px; background: var(--copper); border-radius: 2px; }
+  .project-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .project-card { background: white; border-radius: 10px; padding: 1.75rem; box-shadow: var(--shadow); border-top: 4px solid var(--green); }
+  .project-card h3 { font-family: 'Lora', serif; font-size: 1rem; color: var(--green); margin-bottom: 0.65rem; line-height: 1.4; }
+  .project-card p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; margin-bottom: 0.75rem; }
+  .project-meta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .project-meta span { font-size: 0.75rem; background: var(--cream); color: var(--text-mid); padding: 0.25rem 0.65rem; border-radius: 4px; }
+  .project-meta .fund { color: var(--green); font-weight: 600; }
+
+  footer { background: var(--green-dark); color: white; padding: 2rem 1.5rem; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 860px) { .research-item { grid-template-columns: 1fr; } .research-item.reverse { direction: ltr; } .research-img { height: 220px; } }
+  @media (max-width: 640px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 1rem; gap: 0.25rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: block; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="Images/aknu_logo.png" alt="AKNU Logo">
+      <div class="nav-brand-text"><div class="name">Dr. Kalyani Dasari</div><div class="dept">Dept. of Zoology · AKNU</div></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="research.html" class="active">Research</a>
+      <a href="students.html">Students</a><a href="publications.html">Publications</a>
+      <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.7);">Research</span></div>
+    <h1>Research</h1>
+    <p>Exploring life across scales — from serotonin rhythms in the brain to nanomaterial synthesis for biomedical applications.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="research-item">
+    <div class="research-img"><img src="Images/research1.jpg" alt="Neurophysiology"></div>
+    <div class="research-content">
+      <div class="research-num">AREA 01</div>
+      <h2>Neurophysiology</h2>
+      <p>This research focus centres on understanding circadian rhythms and the biological clock mechanisms that govern daily physiological cycles. A particular emphasis is placed on serotonin dynamics — the synthesis, release, and rhythmic fluctuation of serotonin in the suprachiasmatic nucleus (SCN), the brain's master pacemaker.</p>
+      <p>Studies span developmental stages from postnatal life through aging, using male Wistar rat models to map how the serotonergic system evolves and how age-related changes affect circadian regulation. The role of melatonin in modulating these rhythms provides a therapeutic dimension to this research.</p>
+      <div class="research-tags">
+        <span class="research-tag">Circadian Rhythms</span><span class="research-tag">Serotonin</span>
+        <span class="research-tag">Suprachiasmatic Nucleus</span><span class="research-tag">Aging</span>
+        <span class="research-tag">Melatonin</span><span class="research-tag">Wistar Rat Model</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-item reverse">
+    <div class="research-img"><img src="Images/research2.jpg" alt="Developmental Biology"></div>
+    <div class="research-content">
+      <div class="research-num">AREA 02</div>
+      <h2>Developmental Biology</h2>
+      <p>Developmental biology research investigates the fundamental molecular and cellular mechanisms that drive the growth and differentiation of animal systems. This includes neurodevelopmental processes that shape the architecture and function of the nervous system from embryonic stages onward.</p>
+      <p>The work addresses how gene regulatory networks orchestrate tissue patterning, organogenesis, and the establishment of neural circuits — with implications for understanding congenital disorders and age-related neurodegenerative changes.</p>
+      <div class="research-tags">
+        <span class="research-tag">Organogenesis</span><span class="research-tag">Neural Development</span>
+        <span class="research-tag">Gene Regulatory Networks</span><span class="research-tag">Tissue Patterning</span>
+        <span class="research-tag">Differentiation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-item">
+    <div class="research-img"><img src="Images/research3.jpg" alt="Molecular Cell Biology"></div>
+    <div class="research-content">
+      <div class="research-num">AREA 03</div>
+      <h2>Molecular Cell Biology</h2>
+      <p>This research area explores the molecular basis of cellular function with a focus on non-coding RNA biology, particularly long non-coding RNAs (lncRNAs) and their emerging roles in disease. Work on lncRNAs in hepatocellular carcinoma has established a research niche at the intersection of cancer biology and RNA biology.</p>
+      <p>The broader programme encompasses gene expression regulation, cellular signalling cascades, and epigenetic mechanisms — generating insights applicable to both fundamental biology and translational medicine.</p>
+      <div class="research-tags">
+        <span class="research-tag">lncRNA</span><span class="research-tag">Non-coding RNA</span>
+        <span class="research-tag">Hepatocellular Carcinoma</span><span class="research-tag">Gene Expression</span>
+        <span class="research-tag">Epigenetics</span><span class="research-tag">Cell Signaling</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-item reverse">
+    <div class="research-img"><img src="Images/research4.jpg" alt="Nanobioscience"></div>
+    <div class="research-content">
+      <div class="research-num">AREA 04</div>
+      <h2>Nanobioscience</h2>
+      <p>The nanobioscience programme focuses on the green and sustainable synthesis of nanocomposites using plant extracts, and evaluating their biological activities. Current materials under investigation include Fe@Carbon dot nanocomposites (synthesised from <em>Euphorbia heterophylla</em> and <em>Madhuca longifolia</em>), ZnO/Carbon dots, and doped Hydroxyapatite composites.</p>
+      <p>Characterisation studies employ XRD, FTIR, SEM, and TEM. Biological screening covers antimicrobial efficacy, <em>in vitro</em> antioxidant activity, anti-inflammatory properties, and biocompatibility assessments for potential orthopaedic and biomedical device applications.</p>
+      <div class="research-tags">
+        <span class="research-tag">Green Synthesis</span><span class="research-tag">Fe@Carbon Dots</span>
+        <span class="research-tag">ZnO Nanocomposites</span><span class="research-tag">Hydroxyapatite</span>
+        <span class="research-tag">Antimicrobial</span><span class="research-tag">Biocompatibility</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-item">
+    <div class="research-img"><img src="Images/research5.jpg" alt="Aquatic Biology"></div>
+    <div class="research-content">
+      <div class="research-num">AREA 05</div>
+      <h2>Aquatic Biology &amp; Fisheries</h2>
+      <p>Aquatic biology research addresses questions of ecological and economic relevance to the East Godavari region of Andhra Pradesh. A RUSA-funded project investigates the biochemical composition — including fatty acid profiles, protein content, and heavy metal accumulation — of Indian major carps from different aquatic ecosystems.</p>
+      <p>Parallel work examines the morphology, systematics, and molecular phylogenetics of the Channa genus in the Indian subcontinent, with comparative fatty acid profiling of wild-caught and cultured <em>Channa striata</em> to inform sustainable aquaculture practices.</p>
+      <div class="research-tags">
+        <span class="research-tag">Indian Major Carps</span><span class="research-tag">Fatty Acid Profiling</span>
+        <span class="research-tag">Channa Genus</span><span class="research-tag">Phylogenetics</span>
+        <span class="research-tag">Heavy Metals</span><span class="research-tag">Aquaculture</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="projects-section">
+  <div class="projects-inner">
+    <div class="section-header"><h2>Funded Projects</h2><div class="underline"></div></div>
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Biochemical Composition of Indian Major Carps from Aquatic Ecosystems, East Godavari District, A.P.</h3>
+        <p>A study examining the nutritional and biochemical composition of major carp species from diverse aquatic environments across East Godavari, informing sustainable fisheries management.</p>
+        <div class="project-meta"><span>RUSA, 2024–26</span><span class="fund">₹5,00,000</span></div>
+      </div>
+      <div class="project-card">
+        <h3>Strengthening University Laboratories — PM-USHA Scheme, Ministry of Education, GoI</h3>
+        <p>Joint proposal to modernise and strengthen laboratory infrastructure across the university under the PM Uchchatar Shiksha Abhiyan scheme — one of the largest capital investments in AKNU's research capacity.</p>
+        <div class="project-meta"><span>PM-USHA, 2024</span><span class="fund">₹20 Crore (sanctioned)</span></div>
+      </div>
+      <div class="project-card">
+        <h3>Equipment Procurement — PM-USHA 2024</h3>
+        <p>Procurement of advanced scientific instrumentation to support research programmes in Zoology, Biotechnology, Nanobioscience, and Food Science under PM-USHA 2024 funding.</p>
+        <div class="project-meta"><span>PM-USHA, Ongoing</span><span class="fund">~₹4 Crore</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="footer-bottom">&copy; 2026 Dr. Kalyani Dasari · Adikavi Nannaya University · All rights reserved</div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

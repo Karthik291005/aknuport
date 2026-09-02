@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses | Dr. Kalyani Dasari | AKNU</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --green: #1B4332; --green-dark: #0d2b1e; --green-mid: #2D6A4F; --green-light: #40916C;
+    --copper: #B87333; --copper-light: #D4956A; --copper-pale: #f0dcc8;
+    --cream: #F7F4F0; --white: #ffffff;
+    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-light: #6b6b6b;
+    --border: #ddd8d0; --shadow: 0 4px 24px rgba(27,67,50,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+
+  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
+  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; }
+  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
+  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
+  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
+  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
+  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+
+  .page-hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 3.5rem 1.5rem; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--copper-light); text-decoration: none; font-size: 0.82rem; }
+  .breadcrumb span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  .page-hero h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; font-weight: 700; }
+  .page-hero p { color: rgba(255,255,255,0.72); margin-top: 0.5rem; }
+
+  .content { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+  .section-header { margin-bottom: 2.5rem; }
+  .section-header h2 { font-family: 'Lora', serif; font-size: 1.7rem; color: var(--green); font-weight: 700; margin-bottom: 0.5rem; }
+  .underline { width: 50px; height: 3px; background: var(--copper); border-radius: 2px; }
+
+  .exp-strip { display: flex; gap: 2rem; background: var(--cream); border-radius: 12px; padding: 2rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
+  .exp-item { display: flex; align-items: center; gap: 1rem; }
+  .exp-icon { width: 48px; height: 48px; background: var(--green); color: var(--copper-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .exp-val { font-family: 'Lora', serif; font-size: 1.6rem; color: var(--green); font-weight: 700; line-height: 1; }
+  .exp-lbl { font-size: 0.75rem; color: var(--text-light); margin-top: 2px; }
+
+  .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.4rem; }
+  .course-card { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s, border-color 0.2s; position: relative; overflow: hidden; }
+  .course-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--green); }
+  .course-card:hover { box-shadow: var(--shadow); border-color: rgba(27,67,50,0.25); }
+  .course-icon { width: 38px; height: 38px; background: var(--cream); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 1rem; margin-bottom: 0.85rem; }
+  .course-card h3 { font-family: 'Lora', serif; font-size: 1rem; color: var(--green); font-weight: 600; margin-bottom: 0.4rem; }
+  .course-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
+  .course-level { font-size: 0.7rem; color: var(--copper); font-weight: 600; letter-spacing: 0.05em; margin-top: 0.65rem; }
+
+  .programs-section { background: var(--cream); padding: 4rem 1.5rem; }
+  .programs-inner { max-width: 1200px; margin: 0 auto; }
+  .program-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: var(--shadow); display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.25rem; }
+  .program-num { font-family: 'Lora', serif; font-size: 2rem; color: rgba(27,67,50,0.15); font-weight: 700; line-height: 1; min-width: 2.5rem; }
+  .program-year { font-size: 0.72rem; color: var(--copper); font-weight: 600; margin-bottom: 0.35rem; }
+  .program-card h3 { font-family: 'Lora', serif; font-size: 1.05rem; color: var(--green); margin-bottom: 0.4rem; }
+  .program-card p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.6; }
+
+  footer { background: var(--green-dark); color: white; padding: 2rem 1.5rem; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 1rem; gap: 0.25rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: block; }
+    .exp-strip { gap: 1.25rem; }
+    .program-card { flex-direction: column; gap: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="Images/aknu_logo.png" alt="AKNU Logo">
+      <div class="nav-brand-text"><div class="name">Dr. Kalyani Dasari</div><div class="dept">Dept. of Zoology · AKNU</div></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="research.html">Research</a>
+      <a href="students.html">Students</a><a href="publications.html">Publications</a>
+      <a href="courses.html" class="active">Courses</a><a href="gallery.html">Gallery</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.7);">Courses</span></div>
+    <h1>Courses Taught</h1>
+    <p>Over 18 years of teaching Zoology, and 5+ years in Biotechnology &amp; Bioinformatics at postgraduate level.</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="exp-strip">
+    <div class="exp-item"><div class="exp-icon"><i class="fa fa-book-open"></i></div><div><div class="exp-val">18+</div><div class="exp-lbl">Years teaching Zoology</div></div></div>
+    <div class="exp-item"><div class="exp-icon"><i class="fa fa-dna"></i></div><div><div class="exp-val">5+</div><div class="exp-lbl">Years teaching Biotech &amp; Bioinformatics</div></div></div>
+    <div class="exp-item"><div class="exp-icon"><i class="fa fa-chalkboard-teacher"></i></div><div><div class="exp-val">13</div><div class="exp-lbl">Distinct courses delivered</div></div></div>
+  </div>
+
+  <div class="section-header"><h2>Courses</h2><div class="underline"></div></div>
+
+  <div class="courses-grid">
+    <div class="course-card"><div class="course-icon"><i class="fa fa-atom"></i></div><h3>Molecular Cell Biology</h3><p>Structure and function of the eukaryotic cell at the molecular level — membrane biology, organelle function, cell signalling, and regulation of the cell cycle.</p><div class="course-level">UG / PG · Zoology &amp; Biotechnology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-seedling"></i></div><h3>Developmental Biology</h3><p>Fertilisation through organogenesis — molecular mechanisms of patterning, germ layer formation, and neurodevelopment in animal models.</p><div class="course-level">PG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-brain"></i></div><h3>Neurobiology</h3><p>Structure and physiology of the nervous system — neurotransmitter systems, synaptic transmission, sensory processing, and neural circuitry.</p><div class="course-level">PG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-shield-virus"></i></div><h3>Immunology</h3><p>Innate and adaptive immune responses, antigen recognition, antibody structure, hypersensitivity, and immunodeficiency diseases.</p><div class="course-level">UG / PG · Zoology &amp; Biotechnology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-heartbeat"></i></div><h3>Animal Physiology</h3><p>Physiological principles of digestion, respiration, circulation, excretion, and endocrine regulation in vertebrate and invertebrate animals.</p><div class="course-level">UG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-dna"></i></div><h3>Molecular Biology</h3><p>DNA replication, transcription, translation, gene regulation in prokaryotes and eukaryotes, and recombinant DNA technology fundamentals.</p><div class="course-level">UG / PG · Zoology &amp; Biotechnology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-flask"></i></div><h3>Biomolecules &amp; Enzymology</h3><p>Structure and function of carbohydrates, lipids, proteins, and nucleic acids; enzyme kinetics, mechanisms, and regulation.</p><div class="course-level">UG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-sync-alt"></i></div><h3>Endocrinology</h3><p>Hormone biosynthesis, secretion, and action — hypothalamo-pituitary axis, reproductive endocrinology, metabolic hormones, and endocrine disorders.</p><div class="course-level">PG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-project-diagram"></i></div><h3>Proteomics</h3><p>Protein expression analysis — 2D electrophoresis, mass spectrometry, protein–protein interactions, and bioinformatics approaches in proteome research.</p><div class="course-level">PG · Biotechnology &amp; Bioinformatics</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-globe-asia"></i></div><h3>Animal Diversity &amp; Conservation</h3><p>Systematics, classification, and natural history of invertebrate and vertebrate phyla; biodiversity hotspots and conservation strategies.</p><div class="course-level">UG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-paw"></i></div><h3>Animal Behavior</h3><p>Ethological principles — innate and learned behaviour, social organisation, communication, foraging, reproductive strategies, and behavioural ecology.</p><div class="course-level">UG / PG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-code-branch"></i></div><h3>Genetics &amp; Evolution</h3><p>Mendelian and non-Mendelian inheritance, linkage, mutation, population genetics, molecular evolution, and speciation mechanisms.</p><div class="course-level">UG · Zoology</div></div>
+    <div class="course-card"><div class="course-icon"><i class="fa fa-water"></i></div><h3>Marine Biology</h3><p>Biodiversity, ecology, and physiology of marine organisms — coral reef systems, deep-sea biology, marine adaptations, and ocean conservation.</p><div class="course-level">PG · Zoology</div></div>
+  </div>
+</div>
+
+<section class="programs-section">
+  <div class="programs-inner">
+    <div class="section-header" style="margin-bottom:2rem;"><h2>Academic Programs Designed</h2><div class="underline"></div></div>
+    <div class="program-card"><div class="program-num">1</div><div><div class="program-year">2008</div><h3>M.S. Biotechnology &amp; Bioinformatics (5-Year Integrated)</h3><p>Designed and launched as First Coordinator. The programme integrates molecular biology, bioinformatics, and computational approaches in a five-year integrated format, serving as one of AKNU's flagship postgraduate programmes.</p></div></div>
+    <div class="program-card"><div class="program-num">2</div><div><div class="program-year">2021</div><h3>UG &amp; PG Forensic Science (with specialisations)</h3><p>Developed syllabi for DNA Fingerprinting &amp; Diagnostics and Cyber Security specialisations. Served as First Chairperson, UG BoS and Chairman, PG BoS for Forensic Science &amp; Cyber Forensics at AKNU.</p></div></div>
+    <div class="program-card"><div class="program-num">3</div><div><div class="program-year">2023</div><h3>M.Sc. Food Science &amp; Technology</h3><p>Designed the complete syllabus and curriculum for this new department. Served as the first Head-in-charge and first Convenor of the PG Board of Studies for Food Science &amp; Technology at AKNU.</p></div></div>
+  </div>
+</section>
+
+<footer><div class="footer-bottom">&copy; 2026 Dr. Kalyani Dasari · Adikavi Nannaya University · All rights reserved</div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

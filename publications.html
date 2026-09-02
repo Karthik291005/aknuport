@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications | Dr. Kalyani Dasari | AKNU</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --green: #1B4332; --green-dark: #0d2b1e; --green-mid: #2D6A4F; --green-light: #40916C;
+    --copper: #B87333; --copper-light: #D4956A; --copper-pale: #f0dcc8;
+    --cream: #F7F4F0; --white: #ffffff;
+    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-light: #6b6b6b;
+    --border: #ddd8d0; --shadow: 0 4px 24px rgba(27,67,50,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+
+  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
+  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; }
+  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
+  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
+  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
+  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
+  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+
+  .page-hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 3.5rem 1.5rem; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--copper-light); text-decoration: none; font-size: 0.82rem; }
+  .breadcrumb span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  .page-hero h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; font-weight: 700; }
+  .page-hero p { color: rgba(255,255,255,0.72); margin-top: 0.5rem; }
+
+  .stats-bar { background: var(--cream); border-bottom: 1px solid var(--border); }
+  .stats-inner { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: flex; gap: 3rem; flex-wrap: wrap; }
+  .stat-num { font-family: 'Lora', serif; font-size: 1.8rem; color: var(--green); font-weight: 700; line-height: 1; }
+  .stat-lbl { font-size: 0.75rem; color: var(--text-light); margin-top: 3px; }
+
+  .content { max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem; }
+  .pub-section { margin-bottom: 4rem; }
+  .pub-section h2 { font-family: 'Lora', serif; font-size: 1.7rem; color: var(--green); font-weight: 700; margin-bottom: 0.5rem; }
+  .underline { width: 50px; height: 3px; background: var(--copper); border-radius: 2px; margin-bottom: 2rem; }
+
+  .pub-entry { display: flex; gap: 1.25rem; padding: 1.4rem; border-radius: 8px; margin-bottom: 0.75rem; background: white; border: 1px solid var(--border); transition: box-shadow 0.2s, border-color 0.2s; }
+  .pub-entry:hover { box-shadow: var(--shadow); border-color: rgba(27,67,50,0.25); }
+  .pub-num { font-family: 'Lora', serif; font-size: 1rem; color: var(--green); font-weight: 700; min-width: 2rem; line-height: 1.5; }
+  .pub-body .authors { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 0.3rem; line-height: 1.6; }
+  .pub-body .authors strong { color: var(--green); }
+  .pub-body .title { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.35rem; line-height: 1.5; font-style: italic; }
+  .pub-body .journal { font-size: 0.82rem; color: var(--text-light); }
+  .pub-body .doi-link { display: inline-block; margin-top: 0.5rem; font-size: 0.78rem; color: var(--green); text-decoration: none; background: var(--cream); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); }
+  .pub-body .doi-link:hover { background: var(--green); color: white; }
+  .badge-submitted { display: inline-block; background: #fef9c3; color: #854d0e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+  .badge-chapter { display: inline-block; background: #ede9fe; color: #5b21b6; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; vertical-align: middle; }
+
+  footer { background: var(--green-dark); color: white; padding: 2rem 1.5rem; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 1rem; gap: 0.25rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: block; }
+    .stats-inner { gap: 1.5rem; }
+    .pub-entry { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="Images/aknu_logo.png" alt="AKNU Logo">
+      <div class="nav-brand-text"><div class="name">Dr. Kalyani Dasari</div><div class="dept">Dept. of Zoology · AKNU</div></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="research.html">Research</a>
+      <a href="students.html">Students</a><a href="publications.html" class="active">Publications</a>
+      <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.7);">Publications</span></div>
+    <h1>Publications</h1>
+    <p>Journal articles, book chapters, and manuscripts spanning neurophysiology, nanobioscience, and aquatic biology.</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-num">19</div><div class="stat-lbl">Journal Articles</div></div>
+    <div><div class="stat-num">1</div><div class="stat-lbl">Book Chapter</div></div>
+    <div><div class="stat-num">4</div><div class="stat-lbl">Manuscripts Submitted</div></div>
+    <div><div class="stat-num">1</div><div class="stat-lbl">Patent Granted</div></div>
+  </div>
+</div>
+
+<div class="content">
+  <!-- SUBMITTED -->
+  <div class="pub-section">
+    <h2>Manuscripts Submitted</h2>
+    <div class="underline"></div>
+    <div class="pub-entry"><div class="pub-num">1</div><div class="pub-body"><div class="authors">Gotham Samuel Silvanus, Abhinash Marukurti, Muvvala Suvarna Jyothi, SK Sharif, Gali Raman, <strong>Dasari Kalyani</strong></div><div class="title">Synthesis, Characterization and Anti-microbial activities of FeO@Carbon dot nanocomposites using <em>Madhuca longifolia</em> <span class="badge-submitted">Under Review</span></div><div class="journal">Manuscript submitted</div></div></div>
+    <div class="pub-entry"><div class="pub-num">2</div><div class="pub-body"><div class="authors"><strong>Dasari Kalyani</strong>, G. Samuel Silvanus, M. Suvarna Jyothi</div><div class="title">Biomass derived carbon dots and their applications <span class="badge-submitted">Under Review</span></div><div class="journal">Manuscript submitted</div></div></div>
+    <div class="pub-entry"><div class="pub-num">3</div><div class="pub-body"><div class="authors"><strong>Dasari Kalyani</strong> and Dharavath Ram Kumar</div><div class="title">Morphology and Phylogenetics of Channa Genus in Indian Subcontinent — A Review <span class="badge-submitted">Under Review</span></div><div class="journal">Manuscript submitted</div></div></div>
+    <div class="pub-entry"><div class="pub-num">4</div><div class="pub-body"><div class="authors">Vijaya Santhi Matha and <strong>Dasari Kalyani</strong> (2025)</div><div class="title">Comparative fatty acid profile of <em>Channa striata</em> from wild and culture systems with respect to the Folch and microwave assisted extraction methods <span class="badge-submitted">Under Review</span></div><div class="journal">Proc. Ind. Natl. Sci. Acad. — Manuscript submitted</div></div></div>
+  </div>
+
+  <!-- JOURNAL PAPERS -->
+  <div class="pub-section">
+    <h2>Journal Publications</h2>
+    <div class="underline"></div>
+    <div class="pub-entry"><div class="pub-num">5</div><div class="pub-body"><div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, <strong>Dasari Kalyani</strong>, Ajaikumar B Kunnumakkara and Pamu Dobbidi (2026)</div><div class="title">Microstructure controlled dielectric transport and surface biointeraction in Mg/Zn-doped hydroxyapatite-KTN ceramic composites</div><div class="journal"><em>Journal of Alloys and Compounds</em> 1062: 187498</div></div></div>
+    <div class="pub-entry"><div class="pub-num">6</div><div class="pub-body"><div class="authors">M. Durga Ganesh et al., <strong>Dasari Kalyani</strong>, Pamu Dobbidi (2025)</div><div class="title">Biomedical potential of Zn/Mg co-doped hydroxyapatite integrated with KTN: A functional composite approach</div><div class="journal"><em>Advanced Functional Materials</em></div></div></div>
+    <div class="pub-entry"><div class="pub-num">7</div><div class="pub-body"><div class="authors">K. Siva Lova Krishna, B. Nageshwari and <strong>Dasari Kalyani</strong> (2025)</div><div class="title">Sustainable synthesis of ZnO/Carbon dots nanocomposites and evaluation of antimicrobial, <em>in vitro</em> antioxidant and anti-inflammatory properties</div><div class="journal"><em>Next Research</em></div></div></div>
+    <div class="pub-entry"><div class="pub-num">8</div><div class="pub-body"><div class="authors">M. Durga Ganesh et al., <strong>Dasari Kalyani</strong>, Pamu Dobbidi (2025)</div><div class="title">Multifunctional characteristics of Cu/Zn Co-doped hydroxyapatite: Enhanced electrical, surface and biocompatibility</div><div class="journal"><em>Journal of Biomedical Materials Research Part A</em> 113(8)</div><a class="doi-link" href="https://doi.org/10.1002/jbm.a.37976" target="_blank"><i class="fa fa-external-link-alt" style="margin-right:0.3rem;"></i>DOI: 10.1002/jbm.a.37976</a></div></div>
+    <div class="pub-entry"><div class="pub-num">9</div><div class="pub-body"><div class="authors">Abhinash Marukuti et al., <strong>Dasari Kalyani</strong> et al. (2025)</div><div class="title"><em>In vitro</em> biological activities of silver nanoparticles using methanolic leaf extract of <em>Plumeria rubra</em></div><div class="journal"><em>Scientific Reports</em></div></div></div>
+    <div class="pub-entry"><div class="pub-num">10</div><div class="pub-body"><div class="authors">M. Durga Ganesh et al., <strong>Dasari Kalyani</strong>, Pamu Dobbidi (2025)</div><div class="title">Tuning the properties of Hydroxyapatite through Mg/Zn Co-doping: A pathway to advanced biomedical devices</div><div class="journal"><em>ACS Biomaterials Science &amp; Engineering</em> 10</div></div></div>
+    <div class="pub-entry"><div class="pub-num">11</div><div class="pub-body"><div class="authors">K. Siva Lova Krishna, <strong>Dasari Kalyani</strong> and B. Nageshwari (2024)</div><div class="title">Green synthesis of Fe@Carbon dot nanocomposites using <em>Euphorbia heterophylla</em>: Exploring sustainable synthesis, characterization and biological activities</div><div class="journal"><em>African Journal of Biological Sciences</em> 6(Si4): 4591–4971</div></div></div>
+    <div class="pub-entry"><div class="pub-num">12</div><div class="pub-body"><div class="authors"><strong>Kalyani Dasari</strong> (2022)</div><div class="title">Long non-coding RNA: Emerging role in hepatocellular carcinoma <span class="badge-chapter">Book Chapter</span></div><div class="journal"><em>Theranostics and Precision Medicine for the Management of Hepatocellular Carcinoma</em>, Elsevier Academic Press. Vol. 1: 327–337. ISBN: 978-0-323-98806-3</div></div></div>
+    <div class="pub-entry"><div class="pub-num">13</div><div class="pub-body"><div class="authors">D.S.R.S. Prakash, P. Vijaya Nirmala and <strong>D. Kalyani</strong> (2021)</div><div class="title">Analysis of accumulation of heavy metals in <em>Polynemus tetradactylus</em> from East Godavari District, A.P.</div><div class="journal"><em>International Journal of Life Sciences</em> 9(2): 231–236</div></div></div>
+    <div class="pub-entry"><div class="pub-num">14</div><div class="pub-body"><div class="authors">D. Satish Kumar and <strong>D. Kalyani</strong> (2016)</div><div class="title">Genetic purity of flue cured tobacco F1 hybrid with RAPD markers</div><div class="journal"><em>International Journal of Current Microbiology and Applied Sciences</em> 5(2): 557–566</div></div></div>
+    <div class="pub-entry"><div class="pub-num">15</div><div class="pub-body"><div class="authors">Satish Kumar D., <strong>Kalyani D.</strong> and Matta Reddy A. (2015)</div><div class="title">Characterization and similarity index of Flue Cured Tobacco hybrid CH3 and its parental lines</div><div class="journal"><em>International Journal of Tropical Agriculture</em> 33(2): 757–761</div></div></div>
+    <div class="pub-entry"><div class="pub-num">16</div><div class="pub-body"><div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, Balaji Rao P. and Aparna S. (2014)</div><div class="title">Molecular typing of <em>Mycobacterium leprae</em> by (TTC)21 repeats</div><div class="journal"><em>International Journal of Basic and Applied Medical Sciences</em> 4(1): 388–394</div></div></div>
+    <div class="pub-entry"><div class="pub-num">17</div><div class="pub-body"><div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, et al. (2014)</div><div class="title">Strain Typing and Strain Differentiation of <em>Mycobacterium leprae</em> by TTC Repeats</div><div class="journal"><em>International Journal of Pharmacology</em> 10(3): 168–174</div></div></div>
+    <div class="pub-entry"><div class="pub-num">18</div><div class="pub-body"><div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong> and J.V. Prasad (2013)</div><div class="title">Tobacco type mediated effects on growth of <em>Spodoptera exigua</em></div><div class="journal"><em>Tobacco Research</em> 39(2): 57–61</div></div></div>
+    <div class="pub-entry"><div class="pub-num">19</div><div class="pub-body"><div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong> et al. (2013)</div><div class="title">Differential response of <em>Nicotiana</em> species to <em>Spodoptera exigua</em></div><div class="journal"><em>Tobacco Research</em> 39(2): 62–66</div></div></div>
+    <div class="pub-entry"><div class="pub-num">20</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2010)</div><div class="title">Effect of melatonin on age induced changes in daily Serotonin rhythms in suprachiasmatic nucleus of male Wistar rat</div><div class="journal"><em>Biogerontology</em> 11: 299–308</div></div></div>
+    <div class="pub-entry"><div class="pub-num">21</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>D. Kalyani</strong> (2008)</div><div class="title">Daily serotonin rhythms in rat brain during postnatal development and aging</div><div class="journal"><em>Biogerontology</em> 9: 229–234 &nbsp;<span style="font-size:0.75rem;color:var(--copper);font-weight:600;">IF: 4.277</span></div></div></div>
+    <div class="pub-entry"><div class="pub-num">22</div><div class="pub-body"><div class="authors"><strong>Kalyani D.</strong> and Anita Jagota (2006)</div><div class="title">Changes in serotonin daily rhythms during development in brain and suprachiasmatic nucleus of rat</div><div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 39–44</div></div></div>
+    <div class="pub-entry"><div class="pub-num">23</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2006)</div><div class="title">Effect of melatonin administration on age related changes in serotonin in rat suprachiasmatic nucleus</div><div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 34–38</div></div></div>
+  </div>
+
+  <!-- PATENT -->
+  <div class="pub-section">
+    <h2>Patent</h2>
+    <div class="underline"></div>
+    <div class="pub-entry" style="border-left: 4px solid var(--copper);">
+      <div class="pub-num"><i class="fa fa-gavel" style="color:var(--copper);font-size:1.3rem;"></i></div>
+      <div class="pub-body">
+        <div class="authors"><strong>Dasari Kalyani</strong> et al.</div>
+        <div class="title">Ball milled nano Hydroxyapatite (nHAp) and a process for its manufacture</div>
+        <div class="journal">Patent No. <strong>577346</strong> · Granted: January 2, 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><div class="footer-bottom">&copy; 2026 Dr. Kalyani Dasari · Adikavi Nannaya University · All rights reserved</div></footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+</script>
+</body>
+</html>

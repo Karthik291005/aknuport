@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Dr. Kalyani Dasari | AKNU</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --green: #1B4332; --green-dark: #0d2b1e; --green-mid: #2D6A4F; --green-light: #40916C;
+    --copper: #B87333; --copper-light: #D4956A; --copper-pale: #f0dcc8;
+    --cream: #F7F4F0; --white: #ffffff;
+    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-light: #6b6b6b;
+    --border: #ddd8d0; --shadow: 0 4px 24px rgba(27,67,50,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+
+  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
+  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; }
+  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
+  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
+  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
+  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
+  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+
+  .page-hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 3.5rem 1.5rem; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--copper-light); text-decoration: none; font-size: 0.82rem; }
+  .breadcrumb span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  .page-hero h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; font-weight: 700; }
+  .page-hero p { color: rgba(255,255,255,0.72); margin-top: 0.5rem; }
+
+  .filter-bar { background: var(--cream); border-bottom: 1px solid var(--border); }
+  .filter-inner { max-width: 1200px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .filter-btn { background: white; border: 1px solid var(--border); color: var(--text-mid); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+  .filter-btn.active, .filter-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+
+  .content { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .gallery-section { margin-bottom: 3rem; }
+  .gallery-section h2 { font-family: 'Lora', serif; font-size: 1.4rem; color: var(--green); margin-bottom: 0.4rem; }
+  .gallery-section-underline { width: 40px; height: 2px; background: var(--copper); border-radius: 2px; margin-bottom: 1.5rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+  .gallery-item { border-radius: 10px; overflow: hidden; position: relative; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.1); background: var(--cream); }
+  .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.4s; }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(13,43,30,0.92), transparent); padding: 1rem 1rem 0.75rem; color: white; font-size: 0.82rem; transform: translateY(100%); transition: transform 0.3s; }
+  .gallery-item:hover .caption { transform: translateY(0); }
+  .gallery-item .caption-title { font-weight: 500; line-height: 1.4; }
+  .gallery-item .caption-cat { font-size: 0.7rem; color: var(--copper-light); margin-bottom: 0.2rem; }
+
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9999; align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox-img { max-width: 90vw; max-height: 85vh; border-radius: 6px; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: none; color: white; font-size: 1.5rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+  .lightbox-close:hover { background: var(--copper); }
+  .lightbox-caption { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.85); font-size: 0.88rem; text-align: center; background: rgba(0,0,0,0.55); padding: 0.5rem 1.5rem; border-radius: 6px; white-space: nowrap; }
+
+  footer { background: var(--green-dark); color: white; padding: 2rem 1.5rem; }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 1rem; gap: 0.25rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: block; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .gallery-item img { height: 150px; }
+    .lightbox-caption { white-space: normal; width: 90vw; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="Images/aknu_logo.png" alt="AKNU Logo">
+      <div class="nav-brand-text"><div class="name">Dr. Kalyani Dasari</div><div class="dept">Dept. of Zoology · AKNU</div></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a><a href="research.html">Research</a>
+      <a href="students.html">Students</a><a href="publications.html">Publications</a>
+      <a href="courses.html">Courses</a><a href="gallery.html" class="active">Gallery</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.7);">Gallery</span></div>
+    <h1>Gallery</h1>
+    <p>Lab life, conferences, events, and the people behind the research.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="lab">Lab</button>
+    <button class="filter-btn" data-filter="conference">Conferences</button>
+    <button class="filter-btn" data-filter="event">Events</button>
+    <button class="filter-btn" data-filter="students">Students</button>
+  </div>
+</div>
+
+<div class="content">
+  <div class="gallery-section">
+    <h2>Laboratory</h2>
+    <div class="gallery-section-underline"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="lab" onclick="openLightbox('Images/gallery1.jpg','Nanobioscience Lab — synthesis and characterisation work')">
+        <img src="Images/gallery1.jpg" alt="Lab work">
+        <div class="caption"><div class="caption-cat">Lab</div><div class="caption-title">Nanobioscience Lab — synthesis &amp; characterisation</div></div>
+      </div>
+      <div class="gallery-item" data-category="lab" onclick="openLightbox('Images/gallery2.jpg','Aquatic Biology Lab — fish sample processing')">
+        <img src="Images/gallery2.jpg" alt="Lab work">
+        <div class="caption"><div class="caption-cat">Lab</div><div class="caption-title">Aquatic Biology Lab — fish sample processing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <h2>Conferences &amp; Workshops</h2>
+    <div class="gallery-section-underline"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="conference" onclick="openLightbox('Images/gallery3.jpg','MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (June 2025)')">
+        <img src="Images/gallery3.jpg" alt="IIT Guwahati Workshop">
+        <div class="caption"><div class="caption-cat">Conference</div><div class="caption-title">MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (2025)</div></div>
+      </div>
+      <div class="gallery-item" data-category="conference" onclick="openLightbox('Images/gallery4.jpg','Invited Speaker — SERB Nanomaterials Conference, KLEF, Guntur (December 2024)')">
+        <img src="Images/gallery4.jpg" alt="SERB Conference KLEF">
+        <div class="caption"><div class="caption-cat">Conference</div><div class="caption-title">Invited Speaker — SERB Nanomaterials Conference, KLEF (2024)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <h2>Events</h2>
+    <div class="gallery-section-underline"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="event" onclick="openLightbox('Images/gallery5.jpg','Aahaar Mahotsav — World Food Day 2025, Adikavi Nannaya University')">
+        <img src="Images/gallery5.jpg" alt="Aahaar Mahotsav">
+        <div class="caption"><div class="caption-cat">Event</div><div class="caption-title">Aahaar Mahotsav — World Food Day, AKNU (Oct 2025)</div></div>
+      </div>
+      <div class="gallery-item" data-category="event" onclick="openLightbox('Images/gallery6.jpg','National Seminar — Recent Trends in Applied Biology, AKNU 2018')">
+        <img src="Images/gallery6.jpg" alt="National Seminar">
+        <div class="caption"><div class="caption-cat">Event</div><div class="caption-title">National Seminar on Applied Biology — AKNU (2018)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <h2>Students &amp; Research Team</h2>
+    <div class="gallery-section-underline"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-category="students" onclick="openLightbox('Images/gallery7.jpg','Ph.D. Award — Dr. Chokkakula Santosh (2016)')">
+        <img src="Images/gallery7.jpg" alt="PhD scholar">
+        <div class="caption"><div class="caption-cat">Students</div><div class="caption-title">Ph.D. Award — Dr. Chokkakula Santosh (2016)</div></div>
+      </div>
+      <div class="gallery-item" data-category="students" onclick="openLightbox('Images/gallery8.jpg','Research Team — Dept. of Zoology, AKNU')">
+        <img src="Images/gallery8.jpg" alt="Research team">
+        <div class="caption"><div class="caption-cat">Students</div><div class="caption-title">Research Team — Dept. of Zoology, AKNU</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()"><i class="fa fa-times"></i></button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<footer><div class="footer-bottom">&copy; 2026 Dr. Kalyani Dasari · Adikavi Nannaya University · All rights reserved</div></footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.gallery-section').forEach(section => {
+        const items = [...section.querySelectorAll('.gallery-item')];
+        const visible = filter === 'all' ? items : items.filter(i => i.dataset.category === filter);
+        section.style.display = visible.length ? '' : 'none';
+        items.forEach(i => i.style.display = (filter === 'all' || i.dataset.category === filter) ? '' : 'none');
+      });
+    });
+  });
+
+  function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (!e || e.target.id === 'lightbox' || e.target.closest('.lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') }); });
+</script>
+</body>
+</html>
