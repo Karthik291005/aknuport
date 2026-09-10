@@ -1,377 +1,1367 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications & Conferences | Dr. Kalyani Dasari | AKNU</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="icon" type="image/png" href="Images/aknu_logo.png">
-<link rel="apple-touch-icon" href="Images/aknu_logo.png">
-<style>
-  :root {
-    --green: #1B4332; --green-dark: #0d2b1e; --green-mid: #2D6A4F; --green-light: #40916C;
-    --copper: #B87333; --copper-light: #D4956A; --copper-pale: #f0dcc8;
-    --cream: #F7F4F0; --white: #ffffff;
-    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-light: #6b6b6b;
-    --border: #ddd8d0; --shadow: 0 4px 24px rgba(27,67,50,0.12);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications & Conferences | Dr. Kalyani Dasari | AKNU</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Images/aknu_logo.png">
+  <link rel="apple-touch-icon" href="Images/aknu_logo.png">
+  <style>
+    :root {
+      --green: #1B4332;
+      --green-dark: #0d2b1e;
+      --green-mid: #2D6A4F;
+      --green-light: #40916C;
+      --copper: #B87333;
+      --copper-light: #D4956A;
+      --copper-pale: #f0dcc8;
+      --cream: #F7F4F0;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #3d3d3d;
+      --text-light: #6b6b6b;
+      --border: #ddd8d0;
+      --shadow: 0 4px 24px rgba(27, 67, 50, 0.12);
+    }
 
-  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
-  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
-  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; }
-  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); }
-  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
-  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
-  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
-  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .page-hero { background: linear-gradient(135deg, var(--green-dark), var(--green)); padding: 3.5rem 1.5rem; }
-  .page-hero-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
-  .breadcrumb { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.8rem; }
-  .breadcrumb a { color: var(--copper-light); text-decoration: none; font-size: 0.82rem; }
-  .breadcrumb span { color: rgba(255,255,255,0.35); font-size: 0.82rem; }
-  .page-hero h1 { font-family: 'Lora', serif; font-size: 2.4rem; color: white; font-weight: 700; }
-  .page-hero p { color: rgba(255,255,255,0.78); margin-top: 0.4rem; max-width: 650px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
 
-  /* Scholar Button Box */
-  .scholar-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px); padding: 1.2rem 1.5rem; border-radius: 12px; display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; }
-  .scholar-card-title { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--copper-light); font-weight: 600; }
-  .scholar-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--copper); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; font-weight: 600; font-size: 0.88rem; text-decoration: none; transition: background 0.2s, transform 0.2s; }
-  .scholar-btn:hover { background: #9c5f27; transform: translateY(-2px); }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--green);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    }
 
-  .stats-bar { background: var(--cream); border-bottom: 1px solid var(--border); }
-  .stats-inner { max-width: 1200px; margin: 0 auto; padding: 1.2rem 1.5rem; display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: space-between; }
-  .stat-num { font-family: 'Lora', serif; font-size: 1.7rem; color: var(--green); font-weight: 700; line-height: 1; }
-  .stat-lbl { font-size: 0.75rem; color: var(--text-light); margin-top: 3px; font-weight: 500; }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
 
-  /* Section Jump Navbar */
-  .section-nav { position: sticky; top: 70px; z-index: 900; background: #ffffff; border-bottom: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-  .section-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; gap: 0.5rem; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
-  .section-nav-inner::-webkit-scrollbar { display: none; }
-  .section-nav a { display: inline-block; padding: 0.85rem 1rem; font-size: 0.83rem; font-weight: 600; color: var(--text-mid); text-decoration: none; border-bottom: 3px solid transparent; transition: all 0.2s; }
-  .section-nav a:hover, .section-nav a.active { color: var(--green); border-bottom-color: var(--copper); }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
 
-  .content { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
-  .pub-section { margin-bottom: 3.5rem; scroll-margin-top: 130px; }
-  .pub-section h2 { font-family: 'Lora', serif; font-size: 1.6rem; color: var(--green); font-weight: 700; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.6rem; }
-  .pub-section h2 i { color: var(--copper); font-size: 1.3rem; }
-  .underline { width: 50px; height: 3px; background: var(--copper); border-radius: 2px; margin-bottom: 1.5rem; }
+    .nav-brand img {
+      height: 46px;
+      width: 46px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-  .pub-entry { display: flex; gap: 1.25rem; padding: 1.25rem; border-radius: 8px; margin-bottom: 0.8rem; background: white; border: 1px solid var(--border); transition: box-shadow 0.2s, border-color 0.2s; }
-  .pub-entry:hover { box-shadow: var(--shadow); border-color: rgba(27,67,50,0.25); }
-  .pub-num { font-family: 'Lora', serif; font-size: 0.95rem; color: var(--green); font-weight: 700; min-width: 2.2rem; line-height: 1.5; }
-  .pub-body { flex: 1; }
-  .pub-body .authors { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 0.3rem; line-height: 1.5; }
-  .pub-body .authors strong { color: var(--green); font-weight: 700; }
-  .pub-body .title { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.35rem; line-height: 1.5; font-style: italic; }
-  .pub-body .journal { font-size: 0.82rem; color: var(--text-light); }
-  .pub-body .doi-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.5rem; font-size: 0.78rem; color: var(--green); text-decoration: none; background: var(--cream); padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid var(--border); font-weight: 500; }
-  .pub-body .doi-link:hover { background: var(--green); color: white; }
+    .nav-brand-text .name {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+    }
 
-  /* Badges */
-  .badge-submitted { display: inline-block; background: #fef9c3; color: #854d0e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; font-style: normal; }
-  .badge-chapter { display: inline-block; background: #ede9fe; color: #5b21b6; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; font-style: normal; }
-  .badge-invited { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; font-style: normal; }
-  .badge-award { display: inline-block; background: #fef3c7; color: #92400e; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 4px; margin-left: 0.4rem; font-style: normal; }
+    .nav-brand-text .dept {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
 
-  /* Subsection Header */
-  .sub-heading { font-family: 'Lora', serif; font-size: 1.25rem; color: var(--green-mid); font-weight: 600; margin: 1.8rem 0 1rem 0; border-left: 3px solid var(--copper); padding-left: 0.6rem; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
 
-  footer { background: var(--green-dark); color: white; padding: 2rem 1.5rem; }
-  .footer-bottom { max-width: 1200px; margin: 0 auto; text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      padding: 0.45rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
 
-  @media (max-width: 768px) {
-    .page-hero-inner { flex-direction: column; align-items: flex-start; }
-    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; padding: 1rem; gap: 0.25rem; }
-    .nav-links.open { display: flex; }
-    .hamburger { display: block; }
-    .stats-inner { gap: 1.2rem; }
-    .pub-entry { flex-direction: column; gap: 0.4rem; }
-  }
-</style>
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .nav-links a.active {
+      border-bottom: 2px solid var(--copper-light);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      padding: 3.5rem 1.5rem;
+    }
+
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .breadcrumb a {
+      color: var(--copper-light);
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+
+    .breadcrumb span {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.82rem;
+    }
+
+    .page-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.4rem;
+      color: white;
+      font-weight: 700;
+    }
+
+    .page-hero p {
+      color: rgba(255, 255, 255, 0.78);
+      margin-top: 0.4rem;
+      max-width: 650px;
+    }
+
+    /* Scholar Button Box */
+    .scholar-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .scholar-card-title {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--copper-light);
+      font-weight: 600;
+    }
+
+    .scholar-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--copper);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .scholar-btn:hover {
+      background: #9c5f27;
+      transform: translateY(-2px);
+    }
+
+    .stats-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .stat-num {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      color: var(--green);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* Section Jump Navbar */
+    .section-nav {
+      position: sticky;
+      top: 70px;
+      z-index: 900;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .section-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    .section-nav-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .section-nav a {
+      display: inline-block;
+      padding: 0.85rem 1rem;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .section-nav a:hover,
+    .section-nav a.active {
+      color: var(--green);
+      border-bottom-color: var(--copper);
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .pub-section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 130px;
+    }
+
+    .pub-section h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .pub-section h2 i {
+      color: var(--copper);
+      font-size: 1.3rem;
+    }
+
+    .underline {
+      width: 50px;
+      height: 3px;
+      background: var(--copper);
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .pub-entry {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
+      background: white;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .pub-entry:hover {
+      box-shadow: var(--shadow);
+      border-color: rgba(27, 67, 50, 0.25);
+    }
+
+    .pub-num {
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      color: var(--green);
+      font-weight: 700;
+      min-width: 2.2rem;
+      line-height: 1.5;
+    }
+
+    .pub-body {
+      flex: 1;
+    }
+
+    .pub-body .authors {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 0.3rem;
+      line-height: 1.5;
+    }
+
+    .pub-body .authors strong {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .pub-body .title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.35rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .pub-body .journal {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    .pub-body .doi-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--green);
+      text-decoration: none;
+      background: var(--cream);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
+
+    .pub-body .doi-link:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* Badges */
+    .badge-submitted {
+      display: inline-block;
+      background: #fef9c3;
+      color: #854d0e;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-style: normal;
+    }
+
+    .badge-chapter {
+      display: inline-block;
+      background: #ede9fe;
+      color: #5b21b6;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-style: normal;
+    }
+
+    .badge-invited {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-style: normal;
+    }
+
+    .badge-award {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-style: normal;
+    }
+
+    /* Subsection Header */
+    .sub-heading {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      color: var(--green-mid);
+      font-weight: 600;
+      margin: 1.8rem 0 1rem 0;
+      border-left: 3px solid var(--copper);
+      padding-left: 0.6rem;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--green-dark);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 48px 0 28px;
+      margin-top: 80px;
+    }
+
+    .site-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 24px;
+    }
+
+    .footer-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--copper);
+      flex-shrink: 0;
+    }
+
+    .footer-info h3 {
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-info p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .footer-info .contact-line {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .footer-info .contact-line a {
+      color: var(--copper-light);
+      text-decoration: none;
+    }
+
+    .footer-info .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--green-dark);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.25rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .stats-inner {
+        gap: 1.2rem;
+      }
+
+      .pub-entry {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <img src="Images/aknu_logo.png" alt="AKNU Logo">
-      <div class="nav-brand-text"><div class="name">Dr. Kalyani Dasari</div><div class="dept">Dept. of Zoology · AKNU</div></div>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a><a href="research.html">Research</a>
-      <a href="students.html">Students</a><a href="publications.html" class="active">Publications</a>
-      <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
-    </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div>
-      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:rgba(255,255,255,0.7);">Publications &amp; Conferences</span></div>
-      <h1>Publications &amp; Academic Engagements</h1>
-      <p>A comprehensive repository of research papers, granted patents, international/national conference presentations, organized workshops, and extension activities.</p>
-    </div>
-    
-    <!-- Google Scholar Card -->
-    <div class="scholar-card">
-      <div class="scholar-card-title"><i class="fa-solid fa-graduation-cap"></i> Academic Profile</div>
-      <a class="scholar-btn" href="https://scholar.google.com/citations?user=CbwZWGwAAAAJ&hl=en" target="_blank">
-        <i class="fa-brands fa-google"></i> Google Scholar Profile
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="Images/aknu_logo.png" alt="AKNU Logo">
+        <div class="nav-brand-text">
+          <div class="name">Dr. Kalyani Dasari</div>
+          <div class="dept">Dept. of Zoology · AKNU</div>
+        </div>
       </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="research.html">Research</a>
+        <a href="students.html">Students</a><a href="publications.html" class="active">Publications</a>
+        <a href="courses.html">Courses</a><a href="gallery.html">Gallery</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
-  </div>
-</div>
+  </nav>
 
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div><div class="stat-num">19</div><div class="stat-lbl">Journal Articles</div></div>
-    <div><div class="stat-num">1</div><div class="stat-lbl">Patent Granted</div></div>
-    <div><div class="stat-num">4</div><div class="stat-lbl">Manuscripts Submitted</div></div>
-    <div><div class="stat-num">23</div><div class="stat-lbl">Conferences</div></div>
-    <div><div class="stat-num">11</div><div class="stat-lbl">Workshops &amp; Seminars</div></div>
-    <div><div class="stat-num">5</div><div class="stat-lbl">Invited Talks</div></div>
-  </div>
-</div>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span
+            style="color:rgba(255,255,255,0.7);">Publications &amp; Conferences</span></div>
+        <h1>Publications &amp; Academic Engagements</h1>
+        <p>A comprehensive repository of research papers, granted patents, international/national conference
+          presentations, organized workshops, and extension activities.</p>
+      </div>
 
-<!-- Category Jump Navigation -->
-<div class="section-nav">
-  <div class="section-nav-inner">
-    <a href="#patent">Patents</a>
-    <a href="#submitted">Submitted Manuscripts</a>
-    <a href="#journals">Journal Publications</a>
-    <a href="#conferences">Conferences Attended/Presented</a>
-    <a href="#workshops">Workshops &amp; Seminars</a>
-    <a href="#talks">Invited Talks</a>
-    <a href="#extension">Extension Activities</a>
-  </div>
-</div>
-
-<div class="content">
-
-  <!-- PATENTS -->
-  <div class="pub-section" id="patent">
-    <h2><i class="fa-solid fa-award"></i> Patents</h2>
-    <div class="underline"></div>
-    <div class="pub-entry" style="border-left: 4px solid var(--copper);">
-      <div class="pub-num"><i class="fa-solid fa-gavel" style="color:var(--copper);font-size:1.2rem;"></i></div>
-      <div class="pub-body">
-        <div class="authors"><strong>Dasari Kalyani</strong> et al.</div>
-        <div class="title" style="font-style:normal; font-weight:700; color:var(--green);">Ball milled nano Hydroxyapatite (nHAp) and a process for its manufacture</div>
-        <div class="journal">Patent No.: <strong>577346</strong> &nbsp;·&nbsp; Granted: <strong>2nd January, 2026</strong></div>
+      <!-- Google Scholar Card -->
+      <div class="scholar-card">
+        <div class="scholar-card-title"><i class="fa-solid fa-graduation-cap"></i> Academic Profile</div>
+        <a class="scholar-btn" href="https://scholar.google.com/citations?user=CbwZWGwAAAAJ&hl=en" target="_blank">
+          <i class="fa-brands fa-google"></i> Google Scholar Profile
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- MANUSCRIPTS SUBMITTED -->
-  <div class="pub-section" id="submitted">
-    <h2><i class="fa-solid fa-file-pen"></i> Manuscripts Submitted</h2>
-    <div class="underline"></div>
-    <div class="pub-entry">
-      <div class="pub-num">1</div>
-      <div class="pub-body">
-        <div class="authors">Gotham Samuel Silvanus, Abhinash Marukurti, Muvvala Suvarna Jyothi, SK Sharif, Gali Raman, <strong>Dasari Kalyani</strong></div>
-        <div class="title">Synthesis, Characterization and Anti-microbial activities of FeO@Carbon dot nanocomposites using <em>Madhuca longifolia</em> <span class="badge-submitted">Under Review</span></div>
-        <div class="journal">Manuscript submitted</div>
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num">19</div>
+        <div class="stat-lbl">Journal Articles</div>
       </div>
-    </div>
-    <div class="pub-entry">
-      <div class="pub-num">2</div>
-      <div class="pub-body">
-        <div class="authors"><strong>Dasari Kalyani</strong>, G. Samuel Silvanus, M. Suvarna Jyothi</div>
-        <div class="title">Biomass derived carbon dots and their applications <span class="badge-submitted">Under Review</span></div>
-        <div class="journal">Manuscript submitted</div>
+      <div>
+        <div class="stat-num">1</div>
+        <div class="stat-lbl">Patent Granted</div>
       </div>
-    </div>
-    <div class="pub-entry">
-      <div class="pub-num">3</div>
-      <div class="pub-body">
-        <div class="authors"><strong>Dasari Kalyani</strong> and Dharavath Ram Kumar</div>
-        <div class="title">Morphology and Phylogenetics of <em>Channa</em> Genus in Indian Subcontinent – A Review <span class="badge-submitted">Under Review</span></div>
-        <div class="journal">Manuscript submitted</div>
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-lbl">Manuscripts Submitted</div>
       </div>
-    </div>
-    <div class="pub-entry">
-      <div class="pub-num">4</div>
-      <div class="pub-body">
-        <div class="authors">Vijaya Santhi Matha and <strong>Dasari Kalyani</strong> (2025)</div>
-        <div class="title">Comparative fatty acid profile of <em>Channa striata</em> from wild and culture systems with respect to the Folch and microwave assisted extraction methods <span class="badge-submitted">Under Review</span></div>
-        <div class="journal"><em>Proc. Ind. Natl. Sci. Acad.</em> — Manuscript submitted</div>
+      <div>
+        <div class="stat-num">23</div>
+        <div class="stat-lbl">Conferences</div>
+      </div>
+      <div>
+        <div class="stat-num">11</div>
+        <div class="stat-lbl">Workshops &amp; Seminars</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-lbl">Invited Talks</div>
       </div>
     </div>
   </div>
 
-  <!-- JOURNAL PUBLICATIONS -->
-  <div class="pub-section" id="journals">
-    <h2><i class="fa-solid fa-book-open"></i> Journal Publications &amp; Book Chapters</h2>
-    <div class="underline"></div>
-    
-    <div class="pub-entry"><div class="pub-num">1</div><div class="pub-body"><div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, <strong>Dasari Kalyani</strong>, Ajaikumar B Kunnumakkara and Pamu Dobbidi (2026)</div><div class="title">Microstructure controlled dielectric transport and surface biointeraction in Mg/Zn-doped hydroxyapatite-KTN ceramic composites</div><div class="journal"><em>Journal of Alloys and Compounds</em> 1062: 187498</div></div></div>
-    <div class="pub-entry"><div class="pub-num">2</div><div class="pub-body"><div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, <strong>Dasari Kalyani</strong>, Ajaikumar B Kunnumakkara and Pamu Dobbidi (2025)</div><div class="title">Biomedical potential of Zn/Mg co-doped hydroxyapatite integrated with KTN: A functional composite approach</div><div class="journal"><em>Advanced Functional Materials</em></div></div></div>
-    <div class="pub-entry"><div class="pub-num">3</div><div class="pub-body"><div class="authors">K. Siva Lova Krishna, B. Nageshwari and <strong>Dasari Kalyani</strong> (2025)</div><div class="title">Sustainable synthesis of ZnO/ Carbon dots nanocomposites and evaluation of antimicrobial, <em>in vitro</em> antioxidant and anti-inflammatory properties</div><div class="journal"><em>Next Research</em></div></div></div>
-    <div class="pub-entry"><div class="pub-num">4</div><div class="pub-body"><div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, P. Joel, <strong>Dasari Kalyani</strong>, Ajaikumar B. Kunnumakkara, Pamu Dobbidi (2025)</div><div class="title">Multifunctional characteristics of Cu/Zn Co-doped hydroxyapatite: Enhanced electrical, surface and biocompatibility</div><div class="journal"><em>Journal of Biomedical Materials Research Part A</em> 113(8)</div><a class="doi-link" href="https://doi.org/10.1002/jbm.a.37976" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1002/jbm.a.37976</a></div></div>
-    <div class="pub-entry"><div class="pub-num">5</div><div class="pub-body"><div class="authors">Abhinash Marukuti, Alavala Matta Reddy, Pangi Vijaya Nirmala, <strong>Dasari Kalyani</strong>, K. Ramaneswari, I.J.N. Padmavathi, L. Pradeepthi Pemmaraju, Gotham Samuel Silvanus, Buddha Sai Keerthana, Shaik Farhana, D. Ramachandran, B. Mallikarjuna and Phanindra Babu Kasi (2025)</div><div class="title"><em>In vitro</em> biological activities of silver nanoparticles using methanolic leaf extract of <em>Plumeria rubra</em></div><div class="journal"><em>Scientific Reports</em></div></div></div>
-    <div class="pub-entry"><div class="pub-num">6</div><div class="pub-body"><div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, P. Joel, <strong>Dasari Kalyani</strong>, Ajaikumar B. Kunnumakkara, Pamu Dobbidi (2025)</div><div class="title">Tuning the properties of Hydroxyapatite through Mg/Zn Co-doping: A pathway to advanced biomedical devices</div><div class="journal"><em>ACS Biomaterials Science &amp; Engineering</em> 10</div></div></div>
-    <div class="pub-entry"><div class="pub-num">7</div><div class="pub-body"><div class="authors">K. Siva Lova Krishna, <strong>Dasari Kalyani</strong> and B. Nageshwari (2024)</div><div class="title">Green synthesis of Fe@Carbon dot nanocomposites using <em>Euphorbia heterophylla</em>: Exploring sustainable synthesis, characterization and biological activities</div><div class="journal"><em>African Journal of Biological Sciences</em> 6(Si4): 4591–4971 (ISSN: 2663-2187)</div></div></div>
-    <div class="pub-entry"><div class="pub-num">8</div><div class="pub-body"><div class="authors"><strong>Kalyani Dasari</strong> (2022)</div><div class="title">Long non-coding RNA: Emerging role in hepatocellular carcinoma <span class="badge-chapter">Book Chapter</span></div><div class="journal"><em>Theranostics and Precision Medicine for the Management of Hepatocellular Carcinoma</em>, Elsevier Academic Press. Vol. 1: 327–337. ISBN: 978-0-323-98806-3</div></div></div>
-    <div class="pub-entry"><div class="pub-num">9</div><div class="pub-body"><div class="authors">D.S.R.S. Prakash, P. Vijaya Nirmala and <strong>D. Kalyani</strong> (2021)</div><div class="title">Analysis of accumulation of heavy metals (Copper, Zinc, Iron, Cadmium and Lead) in <em>Polynemus tetradactylus</em>, environment pollution from East Godavari district – Andhra Pradesh, India</div><div class="journal"><em>International Journal of Life Sciences</em> 9(2): 231–236</div></div></div>
-    <div class="pub-entry"><div class="pub-num">10</div><div class="pub-body"><div class="authors">D. Satish Kumar and <strong>D. Kalyani</strong> (2016)</div><div class="title">Genetic purity of flue cured tobacco F1 hybrid with RAPD markers</div><div class="journal"><em>International Journal of Current Microbiology and Applied Sciences</em> 5(2): 557–566</div></div></div>
-    <div class="pub-entry"><div class="pub-num">11</div><div class="pub-body"><div class="authors">Satish Kumar D., <strong>Kalyani D.</strong> and Matta Reddy A. (2015)</div><div class="title">Characterization and similarity index of Flue Cured Tobacco hybrid CH3 and its parental lines</div><div class="journal"><em>International Journal of Tropical Agriculture</em> 33(2): 757–761</div></div></div>
-    <div class="pub-entry"><div class="pub-num">12</div><div class="pub-body"><div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, Balaji Rao P. and Aparna S. (2014)</div><div class="title">Molecular typing of <em>Mycobacterium leprae</em> by (TTC)21 repeats in multicase families</div><div class="journal"><em>International Journal of Basic and Applied Medical Sciences</em> 4(1): 388–394</div></div></div>
-    <div class="pub-entry"><div class="pub-num">13</div><div class="pub-body"><div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, Idress Hamad A., Aparna S., Padmaja P. and Madan Mohan M. (2014)</div><div class="title">Strain Typing and Strain Differentiation of <em>Mycobacterium leprae</em> by TTC Repeats</div><div class="journal"><em>International Journal of Pharmacology</em> 10(3): 168–174</div></div></div>
-    <div class="pub-entry"><div class="pub-num">14</div><div class="pub-body"><div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong> and J.V. Prasad (2013)</div><div class="title">Tobacco type mediated effects on the growth and development of the beet army worm, <em>Spodoptera exigua</em> (Hub.)</div><div class="journal"><em>Tobacco Research</em> 39(2): 57–61</div></div></div>
-    <div class="pub-entry"><div class="pub-num">15</div><div class="pub-body"><div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong>, J.V. Prasad and T.G.K. Murthy (2013)</div><div class="title">Differential response of selected wild <em>Nicotiana</em> species to beet army worm, <em>Spodoptera exigua</em> (Hub.)</div><div class="journal"><em>Tobacco Research</em> 39(2): 62–66</div></div></div>
-    <div class="pub-entry"><div class="pub-num">16</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2010)</div><div class="title">Effect of melatonin on age induced changes in daily Serotonin rhythms in suprachiasmatic nucleus of male wistar rat</div><div class="journal"><em>Biogerontology</em> 11: 299–308</div></div></div>
-    <div class="pub-entry"><div class="pub-num">17</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>D. Kalyani</strong> (2008)</div><div class="title">Daily serotonin rhythms in rat brain during postnatal development and aging</div><div class="journal"><em>Biogerontology</em> 9: 229–234 &nbsp;<span style="font-size:0.75rem;color:var(--copper);font-weight:600;">IF: 4.277</span></div></div></div>
-    <div class="pub-entry"><div class="pub-num">18</div><div class="pub-body"><div class="authors"><strong>Kalyani D.</strong> and Anita Jagota (2006)</div><div class="title">Changes in serotonin daily rhythms during development in brain and suprachiasmatic nucleus of rat</div><div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 39–44</div></div></div>
-    <div class="pub-entry"><div class="pub-num">19</div><div class="pub-body"><div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2006)</div><div class="title">Effect of melatonin administration on age related changes in serotonin and N-acetyl transferase activity in the rat suprachiasmatic nucleus</div><div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 34–38</div></div></div>
-  </div>
-
-  <!-- CONFERENCES -->
-  <div class="pub-section" id="conferences">
-    <h2><i class="fa-solid fa-users"></i> Conferences Attended &amp; Presented</h2>
-    <div class="underline"></div>
-
-    <div class="sub-heading">International Conferences</div>
-    <div class="pub-entry"><div class="pub-num">1</div><div class="pub-body"><div class="title">Exploring Novel precursors for Fe@Carbon Dot Nanocomposites: Green synthesis, Characterization &amp; Biological activities <span class="badge-invited">Invited Speaker</span></div><div class="journal">SERB Sponsored International Conference on “Advanced Nanomaterials for Energy Storage Applications” at KLEF, Guntur &nbsp;·&nbsp; December 19–21, 2024</div></div></div>
-    <div class="pub-entry"><div class="pub-num">2</div><div class="pub-body"><div class="title">Exploring Novel precursors for Fe@Carbon Dot Nanocomposites: Green synthesis, Characterization &amp; Biological activities <span class="badge-submitted">Oral Presentation</span></div><div class="journal">International Conference on “Biomaterials and Biodevices” Organized by Prezentis Ltd., Dubai &nbsp;·&nbsp; November 18–19, 2024</div></div></div>
-    <div class="pub-entry"><div class="pub-num">3</div><div class="pub-body"><div class="title">International Conference on “Reproductive Biology, Comparative Endocrinology and Development”</div><div class="journal">Jointly organized by University of Hyderabad and Centre for Cellular and Molecular Biology (CCMB), Hyderabad &nbsp;·&nbsp; September 14–16, 2022</div></div></div>
-    <div class="pub-entry"><div class="pub-num">4</div><div class="pub-body"><div class="title">Indian Academy of Neurosciences International e-Conference on “Basic and Clinical Neurosciences: Bridging the Gaps”</div><div class="journal">Jointly organized by University of Hyderabad and NIPER, Hyderabad &nbsp;·&nbsp; October 4–7, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">5</div><div class="pub-body"><div class="title">Effect of Melatonin administration on age related changes in Serotonin and N-Acetyl Transferase activity rhythms in the Suprachiasmatic Nucleus of Rat <span class="badge-submitted">Oral Presentation</span></div><div class="journal">International Conference on “Environmental Conservation and Human Health – Challenges &amp; Strategies”, Dept. of Zoology, Sri Venkateswara University, Tirupati &nbsp;·&nbsp; December 21–23, 2016</div></div></div>
-    <div class="pub-entry"><div class="pub-num">6</div><div class="pub-body"><div class="title">Poster Presentation on Genomic Mechanisms</div><div class="journal">International Conference on “Genomes: Mechanism and Function” organized by School of Life Sciences, University of Hyderabad &nbsp;·&nbsp; December 2–5, 2013</div></div></div>
-    <div class="pub-entry"><div class="pub-num">7</div><div class="pub-body"><div class="title">Changes in serotonin daily rhythms during development in brain and suprachiasmatic nucleus of rat</div><div class="journal">International Symposium on Frontiers in Molecular Endocrinology &nbsp;·&nbsp; December 1–15, 2005</div></div></div>
-    <div class="pub-entry"><div class="pub-num">8</div><div class="pub-body"><div class="title">Serotonin rhythms during development in rat brain and suprachiasmatic nucleus</div><div class="journal">International Neuroscience Conference (Indian Academy of Neuroscience &amp; SNCI), University of Hyderabad &nbsp;·&nbsp; May 6–8, 2004</div></div></div>
-
-    <div class="sub-heading">National Conferences</div>
-    <div class="pub-entry"><div class="pub-num">9</div><div class="pub-body"><div class="title">One-day National Conference on “Quantum Biotechnology: Quantum Phenomena to Biomedical Innovation”</div><div class="journal">National Quantum Mission (NQM) by DST Govt. of India, co-organized by Qmet Tech &amp; QuICST at IIT Bombay &nbsp;·&nbsp; August 24, 2026</div></div></div>
-    <div class="pub-entry"><div class="pub-num">10</div><div class="pub-body"><div class="title">Metagenomics in Ecological Resilience for Sustainable Aquaculture Practices: Understanding Microbial Ecology <span class="badge-submitted">Poster Presentation</span></div><div class="journal">UGC-sponsored National Seminar on “Socio-environmental issues and Sustainable development”, Acharya Nagarjuna University &nbsp;·&nbsp; March 6–7, 2023</div></div></div>
-    <div class="pub-entry"><div class="pub-num">11</div><div class="pub-body"><div class="title">Saga of Science from 13th to 21st century</div><div class="journal">National Webinar organized by Dept. of Biochemistry, Mizoram University &nbsp;·&nbsp; August 25, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">12</div><div class="pub-body"><div class="title">Opportunities in cognitive neuro-medicine: A cell to society continuum</div><div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; August 11, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">13</div><div class="pub-body"><div class="title">Vaccines and drugs against COVID-19</div><div class="journal">National Webinar organized by Dept. of Biotechnology, Mizoram University &nbsp;·&nbsp; May 18, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">14</div><div class="pub-body"><div class="title">Webinar on Corona Virus</div><div class="journal">Organized by University of Mizoram, Aizawl &nbsp;·&nbsp; May 18, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">15</div><div class="pub-body"><div class="title">Aging and Health: New Initiatives in Translating Research for Neurodegenerative Challenges and Bio-markers in Neurodegenerative Diseases</div><div class="journal">Organized by University of Mizoram, Aizawl &nbsp;·&nbsp; May 15, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">16</div><div class="pub-body"><div class="title">Principles in Cell Signaling</div><div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; May 4, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">17</div><div class="pub-body"><div class="title">Neuro-degenerative Diseases – Challenges and Excitements</div><div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; May 1, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">18</div><div class="pub-body"><div class="title">COVID-19: Operational Planning Guidelines and COVID-19 Partners Platform</div><div class="journal">WHO Preparedness &amp; Response Support Course &nbsp;·&nbsp; April 12, 2020</div></div></div>
-    <div class="pub-entry"><div class="pub-num">19</div><div class="pub-body"><div class="title">Inventorying and Quantification of Animal diversity on Adikavi Nannaya University campus: A preliminary study <span class="badge-invited">Co-Convenor</span></div><div class="journal">Two-day National Seminar on “Recent Trends in Applied Biology” at AKNU &nbsp;·&nbsp; August 16–17, 2018</div></div></div>
-    <div class="pub-entry"><div class="pub-num">20</div><div class="pub-body"><div class="title">Application of RNA interference (RNAi) technology in aquaculture <span class="badge-submitted">Poster Presentation</span></div><div class="journal">National Seminar on “Recent Trends in Aquaculture for sustainable environment”, Ch.S.D.St. Theresa’s Autonomous College, Eluru &nbsp;·&nbsp; September 8–9, 2014</div></div></div>
-    <div class="pub-entry"><div class="pub-num">21</div><div class="pub-body"><div class="title">Effect of Melatonin administration on age related changes in Serotonin levels and CaMKII activity in Suprachiasmatic nucleus of rat</div><div class="journal">One-day Seminar on Trends and Techniques in Molecular Neuroendocrinology, University of Hyderabad &nbsp;·&nbsp; November 24, 2006</div></div></div>
-    <div class="pub-entry"><div class="pub-num">22</div><div class="pub-body"><div class="title">Age related changes and the effect of Melatonin administration on Serotonin rhythms in Suprachiasmatic nuclei of rat</div><div class="journal">22nd Conference of Indian Society for Animal Physiology on Comparative &amp; Stress Physiology, Osmania University &nbsp;·&nbsp; November 14–16, 2005</div></div></div>
-    <div class="pub-entry"><div class="pub-num">23</div><div class="pub-body"><div class="title">Effect of aging on Serotonin Circadian Rhythms <span class="badge-submitted">Poster Presentation</span></div><div class="journal">Symposium on Brain Genomics, University of Hyderabad &nbsp;·&nbsp; December 9–10, 2002</div></div></div>
-  </div>
-
-  <!-- WORKSHOPS & SEMINARS -->
-  <div class="pub-section" id="workshops">
-    <h2><i class="fa-solid fa-chalkboard-user"></i> Workshops &amp; Seminars Organized / Attended</h2>
-    <div class="underline"></div>
-
-    <div class="pub-entry"><div class="pub-num">1</div><div class="pub-body"><div class="title">Organized “Aahaar Mahotsav” on World Food Day 2025 <span class="badge-invited">Organizer</span></div><div class="journal">Two-day event organized at Adikavi Nannaya University &nbsp;·&nbsp; October 15–16, 2025</div></div></div>
-    <div class="pub-entry"><div class="pub-num">2</div><div class="pub-body"><div class="title">MeitY INUP-i2i Familiarization Workshop at Centre for Nanotechnology, IIT Guwahati <span class="badge-award">Best Poster Award</span></div><div class="journal">Sponsored by Ministry of Electronics &amp; IT (MeitY), Govt. of India &nbsp;·&nbsp; June 10–12, 2025</div></div></div>
-    <div class="pub-entry"><div class="pub-num">3</div><div class="pub-body"><div class="title">One-week National e-Workshop on “Innovation &amp; Intellectual Property Rights”</div><div class="journal">Organized by InTEC, CSIR-IMMT, Bhubaneswar &nbsp;·&nbsp; June 14–19, 2021</div></div></div>
-    <div class="pub-entry"><div class="pub-num">4</div><div class="pub-body"><div class="title">Two-day Lecture Workshop on “Biological Diversity and Biotechnology for Sustainable Environment” <span class="badge-invited">Organizer</span></div><div class="journal">Organized at Adikavi Nannaya University &nbsp;·&nbsp; December 18–19, 2018</div></div></div>
-    <div class="pub-entry"><div class="pub-num">5</div><div class="pub-body"><div class="title">National Workshop on “Statistical Methods in Medical Research and Introduction to SPSS”</div><div class="journal">Dept. of Biostatistics, NIMHANS, Bengaluru &nbsp;·&nbsp; June 12–14, 2017</div></div></div>
-    <div class="pub-entry"><div class="pub-num">6</div><div class="pub-body"><div class="title">National Workshop on “Dissemination of Geo-spatial technology for development of Andhra Pradesh”</div><div class="journal">In association with APSAC, Govt. of A.P., held at Adikavi Nannaya University &nbsp;·&nbsp; February 16, 2017</div></div></div>
-    <div class="pub-entry"><div class="pub-num">7</div><div class="pub-body"><div class="title">National Women’s Parliament Delegate</div><div class="journal">Organized by Legislative Assembly of Andhra Pradesh &nbsp;·&nbsp; February 10–12, 2017</div></div></div>
-    <div class="pub-entry"><div class="pub-num">8</div><div class="pub-body"><div class="title">Workshop on “Women Scientist Sensitization”</div><div class="journal">Held at JNTU Kakinada &nbsp;·&nbsp; August 17–18, 2011</div></div></div>
-    <div class="pub-entry"><div class="pub-num">9</div><div class="pub-body"><div class="title">New Directions and Dimensions in Aquaculture and Fisheries Research</div><div class="journal">Two-day workshop at Adikavi Nannaya University, Rajahmundry &nbsp;·&nbsp; February 18–19, 2008</div></div></div>
-    <div class="pub-entry"><div class="pub-num">10</div><div class="pub-body"><div class="title">Workshop on Adaptation and Time</div><div class="journal">JNCASR, Jakkur, Bangalore &nbsp;·&nbsp; August 27 – September 4, 2002</div></div></div>
-    <div class="pub-entry"><div class="pub-num">11</div><div class="pub-body"><div class="title">Training program on “Right to a free and fair world”</div><div class="journal">Organized by NHRDC, Adikavi Nannaya University</div></div></div>
-  </div>
-
-  <!-- INVITED TALKS -->
-  <div class="pub-section" id="talks">
-    <h2><i class="fa-solid fa-microphone"></i> Invited Talks &amp; Resource Person Engagements</h2>
-    <div class="underline"></div>
-
-    <div class="pub-entry"><div class="pub-num">1</div><div class="pub-body"><div class="title">Organized Guest Lecture &amp; Workshop for Departments of Aquaculture, Biochemistry, Biotechnology &amp; Zoology <span class="badge-invited">Organizer</span></div><div class="journal">Adikavi Nannaya University &nbsp;·&nbsp; 2025</div></div></div>
-    <div class="pub-entry"><div class="pub-num">2</div><div class="pub-body"><div class="title">Guest Lecture on "Cancer Awareness &amp; Pathophysiology" <span class="badge-invited">Guest Speaker</span></div><div class="journal">Govt. Arts College (A), Rajahmundry &nbsp;·&nbsp; 2024</div></div></div>
-    <div class="pub-entry"><div class="pub-num">3</div><div class="pub-body"><div class="title">COVID-19: Therapeutic targets and potential drugs <span class="badge-invited">Invited Talk</span></div><div class="journal">UGC-Sponsored National Seminar on “Recent trends in biotechnology and future prospects”, Ideal College of Arts &amp; Sciences, Kakinada &nbsp;·&nbsp; Sept 30 – Oct 1, 2022</div></div></div>
-    <div class="pub-entry"><div class="pub-num">4</div><div class="pub-body"><div class="title">State-level Workshop on “Bioanalytical techniques” <span class="badge-invited">Resource Person</span></div><div class="journal">Government College (Autonomous), Rajahmundry &nbsp;·&nbsp; February 11, 2015</div></div></div>
-    <div class="pub-entry"><div class="pub-num">5</div><div class="pub-body"><div class="title">Guest Lecture on “Drug discovery and development” <span class="badge-invited">Guest Speaker</span></div><div class="journal">Govt. College (A), Rajahmundry &nbsp;·&nbsp; November 29, 2013</div></div></div>
-  </div>
-
-  <!-- EXTENSION ACTIVITIES -->
-  <div class="pub-section" id="extension">
-    <h2><i class="fa-solid fa-handshake"></i> Extension &amp; Academic Committee Activities</h2>
-    <div class="underline"></div>
-
-    <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
-      <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
-      <div class="pub-body">
-        <div class="title" style="font-style:normal; font-weight:600;">Subject Expert in Zoology — Selection Committee for CAS Promotions (Professor Level 14)</div>
-        <div class="journal">Yogi Vemana University, Dr. Y.S.R. Kadapa Dt., Andhra Pradesh &nbsp;·&nbsp; February 6, 2026</div>
-      </div>
-    </div>
-    <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
-      <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
-      <div class="pub-body">
-        <div class="title" style="font-style:normal; font-weight:600;">Academician Member — Selection Committee for Career Advancement Scheme (CAS)</div>
-        <div class="journal">Jawaharlal Nehru Technological University (JNTUK), Kakinada &nbsp;·&nbsp; January 17–19, 2026</div>
-      </div>
-    </div>
-    <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
-      <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
-      <div class="pub-body">
-        <div class="title" style="font-style:normal; font-weight:600;">Selection Committee Member — Young Professional-II/I (Food Processing &amp; Technology)</div>
-        <div class="journal">Project “Product diversification and value addition in Turmeric and Aswagandha”, ICAR-CTRI, Rajahmundry &nbsp;·&nbsp; July 25, 2024</div>
-      </div>
-    </div>
-    <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
-      <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
-      <div class="pub-body">
-        <div class="title" style="font-style:normal; font-weight:600;">Selection Committee Member — Young Professional-II (Biochemistry)</div>
-        <div class="journal">ICAR-CTRI, Rajahmundry, A.P. &nbsp;·&nbsp; February 20, 2024</div>
-      </div>
-    </div>
-    <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
-      <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
-      <div class="pub-body">
-        <div class="title" style="font-style:normal; font-weight:600;">External Expert Member — Walk-in-Interview for ‘Project Scientist-II’</div>
-        <div class="journal">Post Harvest &amp; Value Addition Division, ICAR-CTRI, Rajahmundry &nbsp;·&nbsp; January 12, 2024</div>
-      </div>
+  <!-- Category Jump Navigation -->
+  <div class="section-nav">
+    <div class="section-nav-inner">
+      <a href="#patent">Patents</a>
+      <a href="#submitted">Submitted Manuscripts</a>
+      <a href="#journals">Journal Publications</a>
+      <a href="#conferences">Conferences Attended/Presented</a>
+      <a href="#workshops">Workshops &amp; Seminars</a>
+      <a href="#talks">Invited Talks</a>
+      <a href="#extension">Extension Activities</a>
     </div>
   </div>
 
-</div>
+  <div class="content">
 
-<footer>
-  <div class="footer-bottom">&copy; 2026 Designed & Developed by Banda Karthik(bandakarthik16@gmail.com)</div>
-</footer>
+    <!-- PATENTS -->
+    <div class="pub-section" id="patent">
+      <h2><i class="fa-solid fa-award"></i> Patents</h2>
+      <div class="underline"></div>
+      <div class="pub-entry" style="border-left: 4px solid var(--copper);">
+        <div class="pub-num"><i class="fa-solid fa-gavel" style="color:var(--copper);font-size:1.2rem;"></i></div>
+        <div class="pub-body">
+          <div class="authors"><strong>Dasari Kalyani</strong> et al.</div>
+          <div class="title" style="font-style:normal; font-weight:700; color:var(--green);">Ball milled nano
+            Hydroxyapatite (nHAp) and a process for its manufacture</div>
+          <div class="journal">Patent No.: <strong>577346</strong> &nbsp;·&nbsp; Granted: <strong>2nd January,
+              2026</strong></div>
+        </div>
+      </div>
+    </div>
 
-<script>
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
-  });
+    <!-- MANUSCRIPTS SUBMITTED -->
+    <div class="pub-section" id="submitted">
+      <h2><i class="fa-solid fa-file-pen"></i> Manuscripts Submitted</h2>
+      <div class="underline"></div>
+      <div class="pub-entry">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="authors">Gotham Samuel Silvanus, Abhinash Marukurti, Muvvala Suvarna Jyothi, SK Sharif, Gali
+            Raman, <strong>Dasari Kalyani</strong></div>
+          <div class="title">Synthesis, Characterization and Anti-microbial activities of FeO@Carbon dot nanocomposites
+            using <em>Madhuca longifolia</em> <span class="badge-submitted">Under Review</span></div>
+          <div class="journal">Manuscript submitted</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="authors"><strong>Dasari Kalyani</strong>, G. Samuel Silvanus, M. Suvarna Jyothi</div>
+          <div class="title">Biomass derived carbon dots and their applications <span class="badge-submitted">Under
+              Review</span></div>
+          <div class="journal">Manuscript submitted</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="authors"><strong>Dasari Kalyani</strong> and Dharavath Ram Kumar</div>
+          <div class="title">Morphology and Phylogenetics of <em>Channa</em> Genus in Indian Subcontinent – A Review
+            <span class="badge-submitted">Under Review</span></div>
+          <div class="journal">Manuscript submitted</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="authors">Vijaya Santhi Matha and <strong>Dasari Kalyani</strong> (2025)</div>
+          <div class="title">Comparative fatty acid profile of <em>Channa striata</em> from wild and culture systems
+            with respect to the Folch and microwave assisted extraction methods <span class="badge-submitted">Under
+              Review</span></div>
+          <div class="journal"><em>Proc. Ind. Natl. Sci. Acad.</em> — Manuscript submitted</div>
+        </div>
+      </div>
+    </div>
 
-  // Active state for sub-navigation
-  const sections = document.querySelectorAll('.pub-section');
-  const navLi = document.querySelectorAll('.section-nav-inner a');
+    <!-- JOURNAL PUBLICATIONS -->
+    <div class="pub-section" id="journals">
+      <h2><i class="fa-solid fa-book-open"></i> Journal Publications &amp; Book Chapters</h2>
+      <div class="underline"></div>
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 150) {
-        current = section.getAttribute('id');
-      }
+      <div class="pub-entry">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, <strong>Dasari Kalyani</strong>, Ajaikumar B
+            Kunnumakkara and Pamu Dobbidi (2026)</div>
+          <div class="title">Microstructure controlled dielectric transport and surface biointeraction in Mg/Zn-doped
+            hydroxyapatite-KTN ceramic composites</div>
+          <div class="journal"><em>Journal of Alloys and Compounds</em> 1062: 187498</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, <strong>Dasari Kalyani</strong>, Ajaikumar B
+            Kunnumakkara and Pamu Dobbidi (2025)</div>
+          <div class="title">Biomedical potential of Zn/Mg co-doped hydroxyapatite integrated with KTN: A functional
+            composite approach</div>
+          <div class="journal"><em>Advanced Functional Materials</em></div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="authors">K. Siva Lova Krishna, B. Nageshwari and <strong>Dasari Kalyani</strong> (2025)</div>
+          <div class="title">Sustainable synthesis of ZnO/ Carbon dots nanocomposites and evaluation of antimicrobial,
+            <em>in vitro</em> antioxidant and anti-inflammatory properties</div>
+          <div class="journal"><em>Next Research</em></div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, P. Joel, <strong>Dasari Kalyani</strong>,
+            Ajaikumar B. Kunnumakkara, Pamu Dobbidi (2025)</div>
+          <div class="title">Multifunctional characteristics of Cu/Zn Co-doped hydroxyapatite: Enhanced electrical,
+            surface and biocompatibility</div>
+          <div class="journal"><em>Journal of Biomedical Materials Research Part A</em> 113(8)</div><a class="doi-link"
+            href="https://doi.org/10.1002/jbm.a.37976" target="_blank"><i
+              class="fa-solid fa-arrow-up-right-from-square"></i> DOI: 10.1002/jbm.a.37976</a>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="authors">Abhinash Marukuti, Alavala Matta Reddy, Pangi Vijaya Nirmala, <strong>Dasari
+              Kalyani</strong>, K. Ramaneswari, I.J.N. Padmavathi, L. Pradeepthi Pemmaraju, Gotham Samuel Silvanus,
+            Buddha Sai Keerthana, Shaik Farhana, D. Ramachandran, B. Mallikarjuna and Phanindra Babu Kasi (2025)</div>
+          <div class="title"><em>In vitro</em> biological activities of silver nanoparticles using methanolic leaf
+            extract of <em>Plumeria rubra</em></div>
+          <div class="journal"><em>Scientific Reports</em></div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">6</div>
+        <div class="pub-body">
+          <div class="authors">M. Durga Ganesh, Mukesh Kumar Manickasamy, P. Joel, <strong>Dasari Kalyani</strong>,
+            Ajaikumar B. Kunnumakkara, Pamu Dobbidi (2025)</div>
+          <div class="title">Tuning the properties of Hydroxyapatite through Mg/Zn Co-doping: A pathway to advanced
+            biomedical devices</div>
+          <div class="journal"><em>ACS Biomaterials Science &amp; Engineering</em> 10</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="authors">K. Siva Lova Krishna, <strong>Dasari Kalyani</strong> and B. Nageshwari (2024)</div>
+          <div class="title">Green synthesis of Fe@Carbon dot nanocomposites using <em>Euphorbia heterophylla</em>:
+            Exploring sustainable synthesis, characterization and biological activities</div>
+          <div class="journal"><em>African Journal of Biological Sciences</em> 6(Si4): 4591–4971 (ISSN: 2663-2187)</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="authors"><strong>Kalyani Dasari</strong> (2022)</div>
+          <div class="title">Long non-coding RNA: Emerging role in hepatocellular carcinoma <span
+              class="badge-chapter">Book Chapter</span></div>
+          <div class="journal"><em>Theranostics and Precision Medicine for the Management of Hepatocellular
+              Carcinoma</em>, Elsevier Academic Press. Vol. 1: 327–337. ISBN: 978-0-323-98806-3</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">9</div>
+        <div class="pub-body">
+          <div class="authors">D.S.R.S. Prakash, P. Vijaya Nirmala and <strong>D. Kalyani</strong> (2021)</div>
+          <div class="title">Analysis of accumulation of heavy metals (Copper, Zinc, Iron, Cadmium and Lead) in
+            <em>Polynemus tetradactylus</em>, environment pollution from East Godavari district – Andhra Pradesh, India
+          </div>
+          <div class="journal"><em>International Journal of Life Sciences</em> 9(2): 231–236</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">10</div>
+        <div class="pub-body">
+          <div class="authors">D. Satish Kumar and <strong>D. Kalyani</strong> (2016)</div>
+          <div class="title">Genetic purity of flue cured tobacco F1 hybrid with RAPD markers</div>
+          <div class="journal"><em>International Journal of Current Microbiology and Applied Sciences</em> 5(2): 557–566
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">11</div>
+        <div class="pub-body">
+          <div class="authors">Satish Kumar D., <strong>Kalyani D.</strong> and Matta Reddy A. (2015)</div>
+          <div class="title">Characterization and similarity index of Flue Cured Tobacco hybrid CH3 and its parental
+            lines</div>
+          <div class="journal"><em>International Journal of Tropical Agriculture</em> 33(2): 757–761</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">12</div>
+        <div class="pub-body">
+          <div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, Balaji Rao P. and Aparna S. (2014)</div>
+          <div class="title">Molecular typing of <em>Mycobacterium leprae</em> by (TTC)21 repeats in multicase families
+          </div>
+          <div class="journal"><em>International Journal of Basic and Applied Medical Sciences</em> 4(1): 388–394</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">13</div>
+        <div class="pub-body">
+          <div class="authors">Santosh Ch., <strong>Kalyani D.</strong>, Idress Hamad A., Aparna S., Padmaja P. and
+            Madan Mohan M. (2014)</div>
+          <div class="title">Strain Typing and Strain Differentiation of <em>Mycobacterium leprae</em> by TTC Repeats
+          </div>
+          <div class="journal"><em>International Journal of Pharmacology</em> 10(3): 168–174</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">14</div>
+        <div class="pub-body">
+          <div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong> and J.V. Prasad (2013)</div>
+          <div class="title">Tobacco type mediated effects on the growth and development of the beet army worm,
+            <em>Spodoptera exigua</em> (Hub.)</div>
+          <div class="journal"><em>Tobacco Research</em> 39(2): 57–61</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">15</div>
+        <div class="pub-body">
+          <div class="authors">P. Padmaja, U. Sreedhar, <strong>D. Kalyani</strong>, J.V. Prasad and T.G.K. Murthy
+            (2013)</div>
+          <div class="title">Differential response of selected wild <em>Nicotiana</em> species to beet army worm,
+            <em>Spodoptera exigua</em> (Hub.)</div>
+          <div class="journal"><em>Tobacco Research</em> 39(2): 62–66</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">16</div>
+        <div class="pub-body">
+          <div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2010)</div>
+          <div class="title">Effect of melatonin on age induced changes in daily Serotonin rhythms in suprachiasmatic
+            nucleus of male wistar rat</div>
+          <div class="journal"><em>Biogerontology</em> 11: 299–308</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">17</div>
+        <div class="pub-body">
+          <div class="authors">Anita Jagota and <strong>D. Kalyani</strong> (2008)</div>
+          <div class="title">Daily serotonin rhythms in rat brain during postnatal development and aging</div>
+          <div class="journal"><em>Biogerontology</em> 9: 229–234 &nbsp;<span
+              style="font-size:0.75rem;color:var(--copper);font-weight:600;">IF: 4.277</span></div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">18</div>
+        <div class="pub-body">
+          <div class="authors"><strong>Kalyani D.</strong> and Anita Jagota (2006)</div>
+          <div class="title">Changes in serotonin daily rhythms during development in brain and suprachiasmatic nucleus
+            of rat</div>
+          <div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 39–44
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">19</div>
+        <div class="pub-body">
+          <div class="authors">Anita Jagota and <strong>Kalyani D.</strong> (2006)</div>
+          <div class="title">Effect of melatonin administration on age related changes in serotonin and N-acetyl
+            transferase activity in the rat suprachiasmatic nucleus</div>
+          <div class="journal"><em>Frontiers in Molecular Endocrinology of Invertebrates and Vertebrates</em> 2: 34–38
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFERENCES -->
+    <div class="pub-section" id="conferences">
+      <h2><i class="fa-solid fa-users"></i> Conferences Attended &amp; Presented</h2>
+      <div class="underline"></div>
+
+      <div class="sub-heading">International Conferences</div>
+      <div class="pub-entry">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="title">Exploring Novel precursors for Fe@Carbon Dot Nanocomposites: Green synthesis,
+            Characterization &amp; Biological activities <span class="badge-invited">Invited Speaker</span></div>
+          <div class="journal">SERB Sponsored International Conference on “Advanced Nanomaterials for Energy Storage
+            Applications” at KLEF, Guntur &nbsp;·&nbsp; December 19–21, 2024</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="title">Exploring Novel precursors for Fe@Carbon Dot Nanocomposites: Green synthesis,
+            Characterization &amp; Biological activities <span class="badge-submitted">Oral Presentation</span></div>
+          <div class="journal">International Conference on “Biomaterials and Biodevices” Organized by Prezentis Ltd.,
+            Dubai &nbsp;·&nbsp; November 18–19, 2024</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="title">International Conference on “Reproductive Biology, Comparative Endocrinology and
+            Development”</div>
+          <div class="journal">Jointly organized by University of Hyderabad and Centre for Cellular and Molecular
+            Biology (CCMB), Hyderabad &nbsp;·&nbsp; September 14–16, 2022</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="title">Indian Academy of Neurosciences International e-Conference on “Basic and Clinical
+            Neurosciences: Bridging the Gaps”</div>
+          <div class="journal">Jointly organized by University of Hyderabad and NIPER, Hyderabad &nbsp;·&nbsp; October
+            4–7, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="title">Effect of Melatonin administration on age related changes in Serotonin and N-Acetyl
+            Transferase activity rhythms in the Suprachiasmatic Nucleus of Rat <span class="badge-submitted">Oral
+              Presentation</span></div>
+          <div class="journal">International Conference on “Environmental Conservation and Human Health – Challenges
+            &amp; Strategies”, Dept. of Zoology, Sri Venkateswara University, Tirupati &nbsp;·&nbsp; December 21–23,
+            2016</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">6</div>
+        <div class="pub-body">
+          <div class="title">Poster Presentation on Genomic Mechanisms</div>
+          <div class="journal">International Conference on “Genomes: Mechanism and Function” organized by School of Life
+            Sciences, University of Hyderabad &nbsp;·&nbsp; December 2–5, 2013</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="title">Changes in serotonin daily rhythms during development in brain and suprachiasmatic nucleus
+            of rat</div>
+          <div class="journal">International Symposium on Frontiers in Molecular Endocrinology &nbsp;·&nbsp; December
+            1–15, 2005</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="title">Serotonin rhythms during development in rat brain and suprachiasmatic nucleus</div>
+          <div class="journal">International Neuroscience Conference (Indian Academy of Neuroscience &amp; SNCI),
+            University of Hyderabad &nbsp;·&nbsp; May 6–8, 2004</div>
+        </div>
+      </div>
+
+      <div class="sub-heading">National Conferences</div>
+      <div class="pub-entry">
+        <div class="pub-num">9</div>
+        <div class="pub-body">
+          <div class="title">One-day National Conference on “Quantum Biotechnology: Quantum Phenomena to Biomedical
+            Innovation”</div>
+          <div class="journal">National Quantum Mission (NQM) by DST Govt. of India, co-organized by Qmet Tech &amp;
+            QuICST at IIT Bombay &nbsp;·&nbsp; August 24, 2026</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">10</div>
+        <div class="pub-body">
+          <div class="title">Metagenomics in Ecological Resilience for Sustainable Aquaculture Practices: Understanding
+            Microbial Ecology <span class="badge-submitted">Poster Presentation</span></div>
+          <div class="journal">UGC-sponsored National Seminar on “Socio-environmental issues and Sustainable
+            development”, Acharya Nagarjuna University &nbsp;·&nbsp; March 6–7, 2023</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">11</div>
+        <div class="pub-body">
+          <div class="title">Saga of Science from 13th to 21st century</div>
+          <div class="journal">National Webinar organized by Dept. of Biochemistry, Mizoram University &nbsp;·&nbsp;
+            August 25, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">12</div>
+        <div class="pub-body">
+          <div class="title">Opportunities in cognitive neuro-medicine: A cell to society continuum</div>
+          <div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; August 11, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">13</div>
+        <div class="pub-body">
+          <div class="title">Vaccines and drugs against COVID-19</div>
+          <div class="journal">National Webinar organized by Dept. of Biotechnology, Mizoram University &nbsp;·&nbsp;
+            May 18, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">14</div>
+        <div class="pub-body">
+          <div class="title">Webinar on Corona Virus</div>
+          <div class="journal">Organized by University of Mizoram, Aizawl &nbsp;·&nbsp; May 18, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">15</div>
+        <div class="pub-body">
+          <div class="title">Aging and Health: New Initiatives in Translating Research for Neurodegenerative Challenges
+            and Bio-markers in Neurodegenerative Diseases</div>
+          <div class="journal">Organized by University of Mizoram, Aizawl &nbsp;·&nbsp; May 15, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">16</div>
+        <div class="pub-body">
+          <div class="title">Principles in Cell Signaling</div>
+          <div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; May 4, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">17</div>
+        <div class="pub-body">
+          <div class="title">Neuro-degenerative Diseases – Challenges and Excitements</div>
+          <div class="journal">National Webinar organized by Mizoram University &nbsp;·&nbsp; May 1, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">18</div>
+        <div class="pub-body">
+          <div class="title">COVID-19: Operational Planning Guidelines and COVID-19 Partners Platform</div>
+          <div class="journal">WHO Preparedness &amp; Response Support Course &nbsp;·&nbsp; April 12, 2020</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">19</div>
+        <div class="pub-body">
+          <div class="title">Inventorying and Quantification of Animal diversity on Adikavi Nannaya University campus: A
+            preliminary study <span class="badge-invited">Co-Convenor</span></div>
+          <div class="journal">Two-day National Seminar on “Recent Trends in Applied Biology” at AKNU &nbsp;·&nbsp;
+            August 16–17, 2018</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">20</div>
+        <div class="pub-body">
+          <div class="title">Application of RNA interference (RNAi) technology in aquaculture <span
+              class="badge-submitted">Poster Presentation</span></div>
+          <div class="journal">National Seminar on “Recent Trends in Aquaculture for sustainable environment”,
+            Ch.S.D.St. Theresa’s Autonomous College, Eluru &nbsp;·&nbsp; September 8–9, 2014</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">21</div>
+        <div class="pub-body">
+          <div class="title">Effect of Melatonin administration on age related changes in Serotonin levels and CaMKII
+            activity in Suprachiasmatic nucleus of rat</div>
+          <div class="journal">One-day Seminar on Trends and Techniques in Molecular Neuroendocrinology, University of
+            Hyderabad &nbsp;·&nbsp; November 24, 2006</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">22</div>
+        <div class="pub-body">
+          <div class="title">Age related changes and the effect of Melatonin administration on Serotonin rhythms in
+            Suprachiasmatic nuclei of rat</div>
+          <div class="journal">22nd Conference of Indian Society for Animal Physiology on Comparative &amp; Stress
+            Physiology, Osmania University &nbsp;·&nbsp; November 14–16, 2005</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">23</div>
+        <div class="pub-body">
+          <div class="title">Effect of aging on Serotonin Circadian Rhythms <span class="badge-submitted">Poster
+              Presentation</span></div>
+          <div class="journal">Symposium on Brain Genomics, University of Hyderabad &nbsp;·&nbsp; December 9–10, 2002
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORKSHOPS & SEMINARS -->
+    <div class="pub-section" id="workshops">
+      <h2><i class="fa-solid fa-chalkboard-user"></i> Workshops &amp; Seminars Organized / Attended</h2>
+      <div class="underline"></div>
+
+      <div class="pub-entry">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="title">Organized “Aahaar Mahotsav” on World Food Day 2025 <span
+              class="badge-invited">Organizer</span></div>
+          <div class="journal">Two-day event organized at Adikavi Nannaya University &nbsp;·&nbsp; October 15–16, 2025
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="title">MeitY INUP-i2i Familiarization Workshop at Centre for Nanotechnology, IIT Guwahati <span
+              class="badge-award">Best Poster Award</span></div>
+          <div class="journal">Sponsored by Ministry of Electronics &amp; IT (MeitY), Govt. of India &nbsp;·&nbsp; June
+            10–12, 2025</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="title">One-week National e-Workshop on “Innovation &amp; Intellectual Property Rights”</div>
+          <div class="journal">Organized by InTEC, CSIR-IMMT, Bhubaneswar &nbsp;·&nbsp; June 14–19, 2021</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="title">Two-day Lecture Workshop on “Biological Diversity and Biotechnology for Sustainable
+            Environment” <span class="badge-invited">Organizer</span></div>
+          <div class="journal">Organized at Adikavi Nannaya University &nbsp;·&nbsp; December 18–19, 2018</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="title">National Workshop on “Statistical Methods in Medical Research and Introduction to SPSS”
+          </div>
+          <div class="journal">Dept. of Biostatistics, NIMHANS, Bengaluru &nbsp;·&nbsp; June 12–14, 2017</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">6</div>
+        <div class="pub-body">
+          <div class="title">National Workshop on “Dissemination of Geo-spatial technology for development of Andhra
+            Pradesh”</div>
+          <div class="journal">In association with APSAC, Govt. of A.P., held at Adikavi Nannaya University
+            &nbsp;·&nbsp; February 16, 2017</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="title">National Women’s Parliament Delegate</div>
+          <div class="journal">Organized by Legislative Assembly of Andhra Pradesh &nbsp;·&nbsp; February 10–12, 2017
+          </div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="title">Workshop on “Women Scientist Sensitization”</div>
+          <div class="journal">Held at JNTU Kakinada &nbsp;·&nbsp; August 17–18, 2011</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">9</div>
+        <div class="pub-body">
+          <div class="title">New Directions and Dimensions in Aquaculture and Fisheries Research</div>
+          <div class="journal">Two-day workshop at Adikavi Nannaya University, Rajahmundry &nbsp;·&nbsp; February 18–19,
+            2008</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">10</div>
+        <div class="pub-body">
+          <div class="title">Workshop on Adaptation and Time</div>
+          <div class="journal">JNCASR, Jakkur, Bangalore &nbsp;·&nbsp; August 27 – September 4, 2002</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">11</div>
+        <div class="pub-body">
+          <div class="title">Training program on “Right to a free and fair world”</div>
+          <div class="journal">Organized by NHRDC, Adikavi Nannaya University</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INVITED TALKS -->
+    <div class="pub-section" id="talks">
+      <h2><i class="fa-solid fa-microphone"></i> Invited Talks &amp; Resource Person Engagements</h2>
+      <div class="underline"></div>
+
+      <div class="pub-entry">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="title">Organized Guest Lecture &amp; Workshop for Departments of Aquaculture, Biochemistry,
+            Biotechnology &amp; Zoology <span class="badge-invited">Organizer</span></div>
+          <div class="journal">Adikavi Nannaya University &nbsp;·&nbsp; 2025</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="title">Guest Lecture on "Cancer Awareness &amp; Pathophysiology" <span class="badge-invited">Guest
+              Speaker</span></div>
+          <div class="journal">Govt. Arts College (A), Rajahmundry &nbsp;·&nbsp; 2024</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="title">COVID-19: Therapeutic targets and potential drugs <span class="badge-invited">Invited
+              Talk</span></div>
+          <div class="journal">UGC-Sponsored National Seminar on “Recent trends in biotechnology and future prospects”,
+            Ideal College of Arts &amp; Sciences, Kakinada &nbsp;·&nbsp; Sept 30 – Oct 1, 2022</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="title">State-level Workshop on “Bioanalytical techniques” <span class="badge-invited">Resource
+              Person</span></div>
+          <div class="journal">Government College (Autonomous), Rajahmundry &nbsp;·&nbsp; February 11, 2015</div>
+        </div>
+      </div>
+      <div class="pub-entry">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="title">Guest Lecture on “Drug discovery and development” <span class="badge-invited">Guest
+              Speaker</span></div>
+          <div class="journal">Govt. College (A), Rajahmundry &nbsp;·&nbsp; November 29, 2013</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTENSION ACTIVITIES -->
+    <div class="pub-section" id="extension">
+      <h2><i class="fa-solid fa-handshake"></i> Extension &amp; Academic Committee Activities</h2>
+      <div class="underline"></div>
+
+      <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
+        <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
+        <div class="pub-body">
+          <div class="title" style="font-style:normal; font-weight:600;">Subject Expert in Zoology — Selection Committee
+            for CAS Promotions (Professor Level 14)</div>
+          <div class="journal">Yogi Vemana University, Dr. Y.S.R. Kadapa Dt., Andhra Pradesh &nbsp;·&nbsp; February 6,
+            2026</div>
+        </div>
+      </div>
+      <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
+        <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
+        <div class="pub-body">
+          <div class="title" style="font-style:normal; font-weight:600;">Academician Member — Selection Committee for
+            Career Advancement Scheme (CAS)</div>
+          <div class="journal">Jawaharlal Nehru Technological University (JNTUK), Kakinada &nbsp;·&nbsp; January 17–19,
+            2026</div>
+        </div>
+      </div>
+      <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
+        <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
+        <div class="pub-body">
+          <div class="title" style="font-style:normal; font-weight:600;">Selection Committee Member — Young
+            Professional-II/I (Food Processing &amp; Technology)</div>
+          <div class="journal">Project “Product diversification and value addition in Turmeric and Aswagandha”,
+            ICAR-CTRI, Rajahmundry &nbsp;·&nbsp; July 25, 2024</div>
+        </div>
+      </div>
+      <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
+        <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
+        <div class="pub-body">
+          <div class="title" style="font-style:normal; font-weight:600;">Selection Committee Member — Young
+            Professional-II (Biochemistry)</div>
+          <div class="journal">ICAR-CTRI, Rajahmundry, A.P. &nbsp;·&nbsp; February 20, 2024</div>
+        </div>
+      </div>
+      <div class="pub-entry" style="border-left: 4px solid var(--green-mid);">
+        <div class="pub-num"><i class="fa-solid fa-user-check" style="color:var(--green-mid);"></i></div>
+        <div class="pub-body">
+          <div class="title" style="font-style:normal; font-weight:600;">External Expert Member — Walk-in-Interview for
+            ‘Project Scientist-II’</div>
+          <div class="journal">Post Harvest &amp; Value Addition Division, ICAR-CTRI, Rajahmundry &nbsp;·&nbsp; January
+            12, 2024</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari" class="footer-photo" />
+        <div class="footer-info">
+          <h3>Dr. Kalyani Dasari</h3>
+          <p>Professor, Dept. of Zoology &amp; Principal, University College of Science and Technology <br />
+            Adikavi Nannaya University, Rajamahendravaram — 533296, Andhra Pradesh, India.</p>
+          <p class="contact-line">
+            📧 <a href="mailto:dk.zoo@aknu.edu.in">dk.zoo@aknu.edu.in</a> &nbsp;|&nbsp; 📞 +91-9849419160
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Designed &amp; Developed by Banda Karthik (bandakarthik16@gmail.com)</span>
+        <span>Department of Zoology · <a href="https://aknu.edu.in" target="_blank"
+            style="color:var(--copper-light);">aknu.edu.in ↗</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
     });
 
-    navLi.forEach(a => {
-      a.classList.remove('active');
-      if (a.getAttribute('href') === `#${current}`) {
-        a.classList.add('active');
-      }
+    // Active state for sub-navigation
+    const sections = document.querySelectorAll('.pub-section');
+    const navLi = document.querySelectorAll('.section-nav-inner a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLi.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>

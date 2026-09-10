@@ -1,743 +1,1672 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Kalyani Dasari | Professor of Zoology | AKNU</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="icon" type="image/png" href="Images/aknu_logo.png">
-<link rel="apple-touch-icon" href="Images/aknu_logo.png">
-<style>
-  :root {
-    --green: #1B4332;
-    --green-dark: #0d2b1e;
-    --green-mid: #2D6A4F;
-    --green-light: #40916C;
-    --copper: #B87333;
-    --copper-light: #D4956A;
-    --copper-pale: #f0dcc8;
-    --cream: #F7F4F0;
-    --white: #ffffff;
-    --text-dark: #1a1a1a;
-    --text-mid: #3d3d3d;
-    --text-light: #6b6b6b;
-    --border: #ddd8d0;
-    --shadow: 0 4px 24px rgba(27,67,50,0.12);
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Kalyani Dasari | Professor of Zoology | AKNU</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Images/aknu_logo.png">
+  <link rel="apple-touch-icon" href="Images/aknu_logo.png">
+  <style>
+    :root {
+      --green: #1B4332;
+      --green-dark: #0d2b1e;
+      --green-mid: #2D6A4F;
+      --green-light: #40916C;
+      --copper: #B87333;
+      --copper-light: #D4956A;
+      --copper-pale: #f0dcc8;
+      --cream: #F7F4F0;
+      --white: #ffffff;
+      --text-dark: #1a1a1a;
+      --text-mid: #3d3d3d;
+      --text-light: #6b6b6b;
+      --border: #ddd8d0;
+      --shadow: 0 4px 24px rgba(27, 67, 50, 0.12);
+    }
 
-  /* NAV */
-  nav { position: sticky; top: 0; z-index: 1000; background: var(--green); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-  .nav-brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
-  .nav-brand img { height: 46px; width: 46px; object-fit: contain; border-radius: 50%; background: rgba(255,255,255,0.1); }
-  .nav-brand-text .name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 600; color: white; letter-spacing: 0.01em; }
-  .nav-brand-text .dept { font-size: 0.72rem; color: rgba(255,255,255,0.65); margin-top: 1px; }
-  .nav-links { display: flex; align-items: center; gap: 0.15rem; }
-  .nav-links a { color: rgba(255,255,255,0.82); text-decoration: none; padding: 0.45rem 0.85rem; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s, color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.12); color: white; }
-  .nav-links a.active { border-bottom: 2px solid var(--copper-light); }
-  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: white; margin: 5px 0; border-radius: 2px; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 55%, var(--green-mid) 100%);
-    padding: 5rem 1.5rem 4.5rem;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='80' cy='0' r='4'/%3E%3Ccircle cx='0' cy='80' r='4'/%3E%3Ccircle cx='80' cy='80' r='4'/%3E%3C/g%3E%3C/svg%3E");
-  }
-  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 340px; gap: 3.5rem; align-items: center; position: relative; }
-  .hero-text .greeting { font-size: 0.8rem; color: var(--copper-light); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
-  .hero-text h1 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 2.9rem); color: white; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
-  .hero-text .designation { font-size: 1.05rem; color: var(--copper-light); font-weight: 500; margin-bottom: 0.3rem; }
-  .hero-text .dept-line { font-size: 0.92rem; color: rgba(255,255,255,0.72); margin-bottom: 0.2rem; }
-  .hero-text .university { font-size: 0.95rem; color: rgba(255,255,255,0.82); margin-bottom: 2rem; }
-  .keywords { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.2rem; }
-  .keyword { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.22); padding: 0.35rem 0.9rem; border-radius: 20px; font-size: 0.78rem; }
-  .hero-stats { display: flex; gap: 2.5rem; }
-  .hero-stat .number { font-family: 'Lora', serif; font-size: 1.9rem; color: var(--copper-light); font-weight: 700; line-height: 1; }
-  .hero-stat .label { font-size: 0.73rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* HERO PHOTO */
-  .hero-photo { display: flex; justify-content: center; align-items: center; }
-  .hero-photo-outer {
-    position: relative; width: 290px; height: 290px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .hero-photo-outer::before {
-    content: '';
-    position: absolute; inset: -14px;
-    border-radius: 50%;
-    border: 2px dashed rgba(212,149,106,0.55);
-    animation: spin 18s linear infinite;
-  }
-  .hero-photo-outer::after {
-    content: '';
-    position: absolute; inset: -6px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(212,149,106,0.3);
-  }
-  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .hero-photo-frame {
-    width: 270px; height: 270px; border-radius: 50%;
-    overflow: hidden;
-    border: 4px solid rgba(212,149,106,0.6);
-    box-shadow: 0 0 0 8px rgba(255,255,255,0.06), 0 20px 60px rgba(0,0,0,0.4);
-    background: rgba(255,255,255,0.07);
-    position: relative; z-index: 1;
-  }
-  .hero-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
-  .ring-dot {
-    position: absolute; width: 12px; height: 12px; border-radius: 50%;
-    background: var(--copper-light); top: -7px; left: 50%; transform: translateX(-50%);
-    z-index: 2; box-shadow: 0 0 8px rgba(212,149,106,0.6);
-  }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
 
-  /* SECTION BASE */
-  section { padding: 5rem 1.5rem; }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-header { margin-bottom: 3rem; }
-  .section-header h2 { font-family: 'Lora', serif; font-size: 2rem; font-weight: 700; color: var(--green); margin-bottom: 0.5rem; }
-  .section-header .underline { width: 50px; height: 3px; background: var(--copper); border-radius: 2px; }
-  .section-header p { margin-top: 0.75rem; color: var(--text-mid); font-size: 0.95rem; max-width: 60ch; }
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--green);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    }
 
-  /* RESEARCH AREAS */
-  .research-section { background: var(--cream); }
-  .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.5rem; }
-  .research-card { border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); position: relative; height: 265px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
-  .research-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(27,67,50,0.22); }
-  .research-card img { width: 100%; height: 100%; object-fit: cover; }
-  .research-card .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,43,30,0.94) 40%, rgba(13,43,30,0.25) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; transition: background 0.3s; }
-  .research-card:hover .overlay { background: linear-gradient(to top, rgba(13,43,30,0.97) 60%, rgba(13,43,30,0.55) 100%); }
-  .research-card .r-num { font-size: 0.68rem; color: var(--copper-light); letter-spacing: 0.12em; margin-bottom: 0.35rem; }
-  .research-card .r-title { font-family: 'Lora', serif; font-size: 1rem; color: white; font-weight: 600; line-height: 1.3; }
-  .research-card .r-desc { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 0.5rem; line-height: 1.5; max-height: 0; overflow: hidden; transition: max-height 0.4s; }
-  .research-card:hover .r-desc { max-height: 120px; }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
 
-  /* HIGHLIGHTS CAROUSEL */
-  .highlights-section { background: white; }
-  .highlights-track-wrap {
-    overflow: hidden;
-    position: relative;
-    border-radius: 12px;
-    max-width: 850px;
-    margin: 0 auto;
-  }
-  .highlights-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  .highlight-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
-  .highlight-card-img {
-    height: 340px;
-    overflow: hidden;
-    background: #f8f9fa;
-  }
-  .highlight-card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .highlight-card-body {
-    padding: 1.5rem;
-  }
-  .badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.65rem;
-    text-transform: uppercase;
-  }
-  .badge-patent { background: #E8F5E9; color: #2E7D32; }
-  .badge-award { background: #FFF8E1; color: #B87333; }
-  .badge-event { background: #E3F2FD; color: #1565C0; }
-  .badge-conference { background: #F3E5F5; color: #7B1FA2; }
-  .badge-appointment { background: #E0F2F1; color: #00695C; }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
 
-  .highlight-card-body h3 {
-    font-family: 'Lora', serif;
-    font-size: 1.15rem;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-  }
-  .highlight-card-body p {
-    font-size: 0.88rem;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .carousel-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--green);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .carousel-btn:hover {
-    background: var(--green-light);
-    transform: scale(1.05);
-  }
+    .nav-brand img {
+      height: 46px;
+      width: 46px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-  /* ACADEMIC & WORK GRID */
-  .academic-work-section { background: var(--cream); }
-  .academic-work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
-  .academic-work-grid .section-header { margin-bottom: 2rem; }
+    .nav-brand-text .name {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.01em;
+    }
 
-  /* TIMELINE */
-  .timeline { position: relative; padding-left: 2.5rem; }
-  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--green), var(--copper)); }
-  .timeline-item { position: relative; margin-bottom: 2.5rem; }
-  .timeline-dot { position: absolute; left: -2.5rem; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--white); border: 3px solid var(--green); }
-  .timeline-dot.gold { border-color: var(--copper); }
-  .timeline-year { font-size: 0.78rem; color: var(--copper); font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
-  .timeline-title { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--green); }
-  .timeline-sub { font-size: 0.85rem; color: var(--text-mid); margin-top: 0.2rem; }
-  .timeline-note { font-size: 0.8rem; color: var(--copper); font-style: italic; margin-top: 0.25rem; }
+    .nav-brand-text .dept {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 1px;
+    }
 
-  /* WORK TABLE */
-  .exp-table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
-  .exp-table thead { background: var(--green); color: white; }
-  .exp-table thead th { padding: 1rem 1.25rem; text-align: left; font-size: 0.85rem; font-weight: 500; }
-  .exp-table tbody tr { border-bottom: 1px solid var(--border); }
-  .exp-table tbody tr:last-child { border-bottom: none; }
-  .exp-table tbody tr:nth-child(even) { background: var(--white); }
-  .exp-table tbody tr:nth-child(odd) { background: var(--cream); }
-  .exp-table td { padding: 1rem 1.25rem; font-size: 0.88rem; color: var(--text-mid); }
-  .exp-table td:first-child { font-weight: 600; color: var(--green); white-space: nowrap; }
-  .exp-table td:nth-child(2) { font-weight: 500; color: var(--text-dark); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+    }
 
-  /* AWARDS */
-  .awards-section { background: white; }
-  .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .award-card { background: var(--cream); border-radius: 10px; padding: 1.75rem 1.5rem; border-left: 4px solid var(--copper); box-shadow: 0 2px 10px rgba(0,0,0,0.06); display: flex; gap: 1.25rem; align-items: flex-start; min-height: 120px;}
-  .award-icon { width: 42px; height: 42px; border-radius: 8px; background: linear-gradient(135deg, var(--green), var(--green-light)); color: var(--copper-light); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-  .award-year { font-size: 0.72rem; color: var(--copper); font-weight: 600; margin-bottom: 0.2rem; }
-  .award-title { font-size: 0.88rem; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      padding: 0.45rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
 
-  /* ADMIN */
-  .admin-section { background: white; }
-  .admin-list { max-height: 520px; overflow-y: auto; padding-right: 0.5rem; }
-  .admin-list::-webkit-scrollbar { width: 4px; }
-  .admin-list::-webkit-scrollbar-track { background: var(--cream); }
-  .admin-list::-webkit-scrollbar-thumb { background: var(--green); border-radius: 4px; }
-  .admin-item { display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
-  .admin-item:last-child { border-bottom: none; }
-  .admin-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--copper); margin-top: 6px; flex-shrink: 0; }
-  .admin-role { font-size: 0.88rem; font-weight: 500; color: var(--text-dark); }
-  .admin-period { font-size: 0.75rem; color: var(--copper); margin-top: 2px; }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
 
-  /* OPENINGS */
-  .openings-section { background: var(--green); color: white; }
-  .openings-section .section-header h2 { color: white; }
-  .openings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
-  .opening-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 1.5rem; }
-  .opening-card h3 { font-family: 'Lora', serif; font-size: 1rem; color: var(--copper-light); margin-bottom: 0.5rem; }
-  .opening-card p { font-size: 0.83rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    .nav-links a.active {
+      border-bottom: 2px solid var(--copper-light);
+    }
 
-  /* FOOTER */
-  footer { background: var(--green-dark); color: white; padding: 3rem 1.5rem 1.5rem; }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem; }
-  .footer-brand { display: flex; gap: 1rem; align-items: flex-start; }
-  .footer-photo { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; border: 2px solid var(--copper); flex-shrink: 0; }
-  .footer-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .footer-name { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; }
-  .footer-title { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 3px; line-height: 1.5; }
-  .footer-nav h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--copper-light); margin-bottom: 1rem; }
-  .footer-nav a { display: block; color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.83rem; margin-bottom: 0.45rem; transition: color 0.2s; }
-  .footer-nav a:hover { color: var(--copper-light); }
-  .footer-contact h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--copper-light); margin-bottom: 1rem; }
-  .footer-contact-item { display: flex; gap: 0.75rem; margin-bottom: 0.65rem; align-items: flex-start; }
-  .footer-contact-item i { color: var(--copper-light); font-size: 0.85rem; margin-top: 3px; }
-  .footer-contact-item span { font-size: 0.82rem; color: rgba(255,255,255,0.78); line-height: 1.5; }
-  .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12); text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+    }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-photo { order: -1; }
-    .hero-photo-outer { width: 220px; height: 220px; }
-    .hero-photo-frame { width: 200px; height: 200px; }
-    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .academic-work-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .awards-grid{grid-template-columns: repeat(2,1fr);}
-  }
-  @media (max-width: 640px) {
-    .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--green-dark); flex-direction: column; align-items: stretch; padding: 1rem; gap: 0.25rem; }
-    .nav-links.open { display: flex; }
-    .hamburger { display: block; }
-    .hero-stats { gap: 1.5rem; }
-    .research-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-photo-outer { width: 200px; height: 200px; }
-    .hero-photo-frame { width: 180px; height: 180px; }
-    .awards-grid{grid-template-columns: 1fr;}
-  }
-</style>
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 55%, var(--green-mid) 100%);
+      padding: 5rem 1.5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='40' cy='40' r='4'/%3E%3Ccircle cx='0' cy='0' r='4'/%3E%3Ccircle cx='80' cy='0' r='4'/%3E%3Ccircle cx='0' cy='80' r='4'/%3E%3Ccircle cx='80' cy='80' r='4'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-text .greeting {
+      font-size: 0.8rem;
+      color: var(--copper-light);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      color: white;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text .designation {
+      font-size: 1.05rem;
+      color: var(--copper-light);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-text .dept-line {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-text .university {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 2rem;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .keyword {
+      background: rgba(255, 255, 255, 0.09);
+      color: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .hero-stat .number {
+      font-family: 'Lora', serif;
+      font-size: 1.9rem;
+      color: var(--copper-light);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .hero-stat .label {
+      font-size: 0.73rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 3px;
+    }
+
+    /* HERO PHOTO */
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-photo-outer {
+      position: relative;
+      width: 290px;
+      height: 290px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo-outer::before {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      border: 2px dashed rgba(212, 149, 106, 0.55);
+      animation: spin 18s linear infinite;
+    }
+
+    .hero-photo-outer::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(212, 149, 106, 0.3);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-photo-frame {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(212, 149, 106, 0.6);
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.06), 0 20px 60px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.07);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ring-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--copper-light);
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 8px rgba(212, 149, 106, 0.6);
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header .underline {
+      width: 50px;
+      height: 3px;
+      background: var(--copper);
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      margin-top: 0.75rem;
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      max-width: 60ch;
+    }
+
+    /* RESEARCH AREAS */
+    .research-section {
+      background: var(--cream);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .research-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      height: 265px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .research-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(27, 67, 50, 0.22);
+    }
+
+    .research-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .research-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 43, 30, 0.94) 40%, rgba(13, 43, 30, 0.25) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      transition: background 0.3s;
+    }
+
+    .research-card:hover .overlay {
+      background: linear-gradient(to top, rgba(13, 43, 30, 0.97) 60%, rgba(13, 43, 30, 0.55) 100%);
+    }
+
+    .research-card .r-num {
+      font-size: 0.68rem;
+      color: var(--copper-light);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.35rem;
+    }
+
+    .research-card .r-title {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .research-card .r-desc {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s;
+    }
+
+    .research-card:hover .r-desc {
+      max-height: 120px;
+    }
+
+    /* HIGHLIGHTS CAROUSEL */
+    .highlights-section {
+      background: white;
+    }
+
+    .highlights-track-wrap {
+      overflow: hidden;
+      position: relative;
+      border-radius: 12px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .highlights-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .highlight-card {
+      flex: 0 0 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .highlight-card-img {
+      height: 340px;
+      overflow: hidden;
+      background: #f8f9fa;
+    }
+
+    .highlight-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .highlight-card-body {
+      padding: 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.65rem;
+      text-transform: uppercase;
+    }
+
+    .badge-patent {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .badge-award {
+      background: #FFF8E1;
+      color: #B87333;
+    }
+
+    .badge-event {
+      background: #E3F2FD;
+      color: #1565C0;
+    }
+
+    .badge-conference {
+      background: #F3E5F5;
+      color: #7B1FA2;
+    }
+
+    .badge-appointment {
+      background: #E0F2F1;
+      color: #00695C;
+    }
+
+    .highlight-card-body h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .highlight-card-body p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--green-light);
+      transform: scale(1.05);
+    }
+
+    /* ACADEMIC & WORK GRID */
+    .academic-work-section {
+      background: var(--cream);
+    }
+
+    .academic-work-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .academic-work-grid .section-header {
+      margin-bottom: 2rem;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green), var(--copper));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--green);
+    }
+
+    .timeline-dot.gold {
+      border-color: var(--copper);
+    }
+
+    .timeline-year {
+      font-size: 0.78rem;
+      color: var(--copper);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .timeline-sub {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-top: 0.2rem;
+    }
+
+    .timeline-note {
+      font-size: 0.8rem;
+      color: var(--copper);
+      font-style: italic;
+      margin-top: 0.25rem;
+    }
+
+    /* WORK TABLE */
+    .exp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .exp-table thead {
+      background: var(--green);
+      color: white;
+    }
+
+    .exp-table thead th {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .exp-table tbody tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .exp-table tbody tr:nth-child(even) {
+      background: var(--white);
+    }
+
+    .exp-table tbody tr:nth-child(odd) {
+      background: var(--cream);
+    }
+
+    .exp-table td {
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+
+    .exp-table td:first-child {
+      font-weight: 600;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .exp-table td:nth-child(2) {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* AWARDS */
+    .awards-section {
+      background: white;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .award-card {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 1.75rem 1.5rem;
+      border-left: 4px solid var(--copper);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      min-height: 120px;
+    }
+
+    .award-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      color: var(--copper-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .award-year {
+      font-size: 0.72rem;
+      color: var(--copper);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .award-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    /* ADMIN */
+    .admin-section {
+      background: white;
+    }
+
+    .admin-list {
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .admin-list::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .admin-list::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    .admin-list::-webkit-scrollbar-thumb {
+      background: var(--green);
+      border-radius: 4px;
+    }
+
+    .admin-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .admin-item:last-child {
+      border-bottom: none;
+    }
+
+    .admin-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--copper);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .admin-role {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .admin-period {
+      font-size: 0.75rem;
+      color: var(--copper);
+      margin-top: 2px;
+    }
+
+    /* OPENINGS */
+    .openings-section {
+      background: var(--green);
+      color: white;
+    }
+
+    .openings-section .section-header h2 {
+      color: white;
+    }
+
+    .openings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .opening-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .opening-card h3 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--copper-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .opening-card p {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--green-dark);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 48px 0 28px;
+      margin-top: 80px;
+    }
+
+    .site-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 24px;
+    }
+
+    .footer-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--copper);
+      flex-shrink: 0;
+    }
+
+    .footer-info h3 {
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-info p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .footer-info .contact-line {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .footer-info .contact-line a {
+      color: var(--copper-light);
+      text-decoration: none;
+    }
+
+    .footer-info .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        order: -1;
+      }
+
+      .hero-photo-outer {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-photo-frame {
+        width: 200px;
+        height: 200px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .academic-work-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--green-dark);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+        gap: 0.25rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-photo-outer {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero-photo-frame {
+        width: 180px;
+        height: 180px;
+      }
+
+      .awards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <img src="Images/aknu_logo.png" alt="AKNU Logo">
-      <div class="nav-brand-text">
-        <div class="name">Dr. Kalyani Dasari</div>
-        <div class="dept">Dept. of Zoology · AKNU</div>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="Images/aknu_logo.png" alt="AKNU Logo">
+        <div class="nav-brand-text">
+          <div class="name">Dr. Kalyani Dasari</div>
+          <div class="dept">Dept. of Zoology · AKNU</div>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="students.html">Students</a>
+        <a href="publications.html">Publications</a>
+        <a href="courses.html">Courses</a>
+        <a href="gallery.html">Gallery</a>
       </div>
-    </a>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="students.html">Students</a>
-      <a href="publications.html">Publications</a>
-      <a href="courses.html">Courses</a>
-      <a href="gallery.html">Gallery</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="greeting">Professor · Researcher · Academic Leader</div>
-      <h1>Dr. Kalyani Dasari</h1>
-      <div class="designation">Professor &amp; Principal</div>
-      <div class="dept-line">Department of Zoology · University College of Science &amp; Technology</div>
-      <div class="university">Adikavi Nannaya University, Rajamahendravaram</div>
-      <div class="keywords">
-        <span class="keyword">Neurophysiology</span>
-        <span class="keyword">Developmental Biology</span>
-        <span class="keyword">Molecular Cell Biology</span>
-        <span class="keyword">Nanobioscience</span>
-        <span class="keyword">Aquatic Biology</span>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="number">18+</div><div class="label">Years Teaching</div></div>
-        <div class="hero-stat"><div class="number">15+</div><div class="label">Years Research</div></div>
-        <div class="hero-stat"><div class="number">20+</div><div class="label">Publications</div></div>
-        <div class="hero-stat"><div class="number">1</div><div class="label">Patent Granted</div></div>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <div class="hero-photo-outer">
-        <div class="ring-dot"></div>
-        <div class="hero-photo-frame">
-          <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="greeting">Professor · Researcher · Academic Leader</div>
+        <h1>Dr. Kalyani Dasari</h1>
+        <div class="designation">Professor &amp; Principal</div>
+        <div class="dept-line">Department of Zoology · University College of Science &amp; Technology</div>
+        <div class="university">Adikavi Nannaya University, Rajamahendravaram</div>
+        <div class="keywords">
+          <span class="keyword">Neurophysiology</span>
+          <span class="keyword">Developmental Biology</span>
+          <span class="keyword">Molecular Cell Biology</span>
+          <span class="keyword">Nanobioscience</span>
+          <span class="keyword">Aquatic Biology</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH AREAS -->
-<section class="research-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Research Areas</h2>
-      <div class="underline"></div>
-      <p>Spanning neuroscience, nanotechnology, and aquatic biology — exploring life across scales.</p>
-    </div>
-    <div class="research-grid">
-      <div class="research-card">
-        <img src="Images/research1.jpg" alt="Neurophysiology">
-        <div class="overlay">
-          <div class="r-num">01</div>
-          <div class="r-title">Neurophysiology</div>
-          <div class="r-desc">Circadian rhythms, serotonin dynamics, and suprachiasmatic nucleus function across developmental stages and aging in rat brain models.</div>
-        </div>
-      </div>
-      <div class="research-card">
-        <img src="Images/research2.jpg" alt="Developmental Biology">
-        <div class="overlay">
-          <div class="r-num">02</div>
-          <div class="r-title">Developmental Biology</div>
-          <div class="r-desc">Growth, differentiation, and molecular mechanisms underlying animal development including neurodevelopmental aspects.</div>
-        </div>
-      </div>
-      <div class="research-card">
-        <img src="Images/research3.jpg" alt="Molecular Cell Biology">
-        <div class="overlay">
-          <div class="r-num">03</div>
-          <div class="r-title">Molecular Cell Biology</div>
-          <div class="r-desc">Non-coding RNAs, gene expression regulation, and cellular signaling pathways in health and disease.</div>
-        </div>
-      </div>
-      <div class="research-card">
-        <img src="Images/research4.jpg" alt="Nanobioscience">
-        <div class="overlay">
-          <div class="r-num">04</div>
-          <div class="r-title">Nanobioscience</div>
-          <div class="r-desc">Synthesis of Fe@Carbon dots, ZnO/Carbon dots, and Hydroxyapatite nanocomposites for antimicrobial and biomedical applications.</div>
-        </div>
-      </div>
-      <div class="research-card">
-        <img src="Images/research5.jpg" alt="Aquatic Biology">
-        <div class="overlay">
-          <div class="r-num">05</div>
-          <div class="r-title">Aquatic Biology &amp; Fisheries</div>
-          <div class="r-desc">Biochemical composition of Indian major carps, phylogenetics of Channa genus, and sustainable aquaculture practices.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RECENT HIGHLIGHTS -->
-<section class="highlights-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Recent Highlights</h2>
-      <div class="underline"></div>
-      <p>Awards, patents, conferences, and milestones from the lab.</p>
-    </div>
-    <div class="highlights-track-wrap">
-      <div class="highlights-track" id="highlightsTrack">
-        <div class="highlight-card">
-          <div class="highlight-card-img"><img src="Images/highlight1.jpg" alt="Patent"></div>
-          <div class="highlight-card-body">
-            <span class="badge badge-patent">Patent</span>
-            <h3>Ball Milled Nano Hydroxyapatite (nHAp) — Patent Granted</h3>
-            <p>Patent No. 577346 granted on January 2, 2026.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">18+</div>
+            <div class="label">Years Teaching</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">15+</div>
+            <div class="label">Years Research</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">20+</div>
+            <div class="label">Publications</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">1</div>
+            <div class="label">Patent Granted</div>
           </div>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-card-img"><img src="Images/highlight2.jpg" alt="Award"></div>
-          <div class="highlight-card-body">
-            <span class="badge badge-award">Award</span>
-            <h3>Best Poster Award — IIT Guwahati</h3>
-            <p>MeitY-INUP-i2i Familiarization Workshop, Centre for Nanotechnology, June 2025.</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-card-img"><img src="Images/highlight3.jpg" alt="Event"></div>
-          <div class="highlight-card-body">
-            <span class="badge badge-event">Event</span>
-            <h3>Aahaar Mahotsav — World Food Day 2025</h3>
-            <p>Organized at Adikavi Nannaya University, October 15–16, 2025.</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-card-img"><img src="Images/highlight4.jpg" alt="Conference"></div>
-          <div class="highlight-card-body">
-            <span class="badge badge-conference">Conference</span>
-            <h3>Invited Speaker — SERB International Conference, KLEF</h3>
-            <p>Advanced Nanomaterials for Energy Storage Applications, Guntur, December 2024.</p>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-card-img"><img src="Images/highlight5.jpg" alt="Appointment"></div>
-          <div class="highlight-card-body">
-            <span class="badge badge-appointment">Appointment</span>
-            <h3>Appointed Principal — University College of Science &amp; Technology</h3>
-            <p>Adikavi Nannaya University, July 27, 2026.</p>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-outer">
+          <div class="ring-dot"></div>
+          <div class="hero-photo-frame">
+            <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari">
           </div>
         </div>
       </div>
     </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="prevBtn" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
-      <button class="carousel-btn" id="nextBtn" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- COMBINED ACADEMIC CREDENTIALS & WORK EXPERIENCE -->
-<section class="academic-work-section">
-  <div class="section-inner">
-    <div class="academic-work-grid">
-      <!-- LEFT COLUMN: ACADEMIC CREDENTIALS -->
-      <div>
-        <div class="section-header">
-          <h2>Academic Credentials</h2>
-          <div class="underline"></div>
-          <p>Educational background and academic qualifications.</p>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-year">2008</div>
-            <div class="timeline-title">Ph.D. in Animal Sciences (Neurophysiology)</div>
-            <div class="timeline-sub">University of Hyderabad</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot gold"></div>
-            <div class="timeline-year">2001</div>
-            <div class="timeline-title">M.Sc. in Animal Sciences</div>
-            <div class="timeline-sub">University of Hyderabad</div>
-            <div class="timeline-note">🏅 University Gold Medal — I rank among SC/ST students</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">1999</div>
-            <div class="timeline-title">B.Sc. (Botany, Zoology, Chemistry)</div>
-            <div class="timeline-sub">Sri Venkateswara University, Tirupathi</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">1996</div>
-            <div class="timeline-title">+2 / Intermediate (Bi.P.C)</div>
-            <div class="timeline-sub">B.I.E., Andhra Pradesh</div>
-            <div class="timeline-note">Distinction</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-year">1994</div>
-            <div class="timeline-title">10th / SSC (CBSE)</div>
-            <div class="timeline-sub">Jawahar Navodaya Vidyalaya</div>
-          </div>
-        </div>
+  <!-- RESEARCH AREAS -->
+  <section class="research-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Research Areas</h2>
+        <div class="underline"></div>
+        <p>Spanning neuroscience, nanotechnology, and aquatic biology — exploring life across scales.</p>
       </div>
-
-      <!-- RIGHT COLUMN: WORK EXPERIENCE -->
-      <div>
-        <div class="section-header">
-          <h2>Work Experience</h2>
-          <div class="underline"></div>
-          <p>Professional positions at Adikavi Nannaya University.</p>
+      <div class="research-grid">
+        <div class="research-card">
+          <img src="Images/research1.jpg" alt="Neurophysiology">
+          <div class="overlay">
+            <div class="r-num">01</div>
+            <div class="r-title">Neurophysiology</div>
+            <div class="r-desc">Circadian rhythms, serotonin dynamics, and suprachiasmatic nucleus function across
+              developmental stages and aging in rat brain models.</div>
+          </div>
         </div>
-        <div style="overflow-x:auto;">
-          <table class="exp-table">
-            <thead>
-              <tr><th>PERIOD</th><th>POSITION</th><th>INSTITUTION</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>2022 – Present</td><td>Professor, Dept. of Zoology</td><td>Adikavi Nannaya University</td></tr>
-              <tr><td>2019 – 2022</td><td>Associate Professor, Dept. of Zoology</td><td>Adikavi Nannaya University</td></tr>
-              <tr><td>2007 – 2019</td><td>Assistant Professor, Dept. of Zoology</td><td>Adikavi Nannaya University</td></tr>
-            </tbody>
-          </table>
+        <div class="research-card">
+          <img src="Images/research2.jpg" alt="Developmental Biology">
+          <div class="overlay">
+            <div class="r-num">02</div>
+            <div class="r-title">Developmental Biology</div>
+            <div class="r-desc">Growth, differentiation, and molecular mechanisms underlying animal development
+              including neurodevelopmental aspects.</div>
+          </div>
+        </div>
+        <div class="research-card">
+          <img src="Images/research3.jpg" alt="Molecular Cell Biology">
+          <div class="overlay">
+            <div class="r-num">03</div>
+            <div class="r-title">Molecular Cell Biology</div>
+            <div class="r-desc">Non-coding RNAs, gene expression regulation, and cellular signaling pathways in health
+              and disease.</div>
+          </div>
+        </div>
+        <div class="research-card">
+          <img src="Images/research4.jpg" alt="Nanobioscience">
+          <div class="overlay">
+            <div class="r-num">04</div>
+            <div class="r-title">Nanobioscience</div>
+            <div class="r-desc">Synthesis of Fe@Carbon dots, ZnO/Carbon dots, and Hydroxyapatite nanocomposites for
+              antimicrobial and biomedical applications.</div>
+          </div>
+        </div>
+        <div class="research-card">
+          <img src="Images/research5.jpg" alt="Aquatic Biology">
+          <div class="overlay">
+            <div class="r-num">05</div>
+            <div class="r-title">Aquatic Biology &amp; Fisheries</div>
+            <div class="r-desc">Biochemical composition of Indian major carps, phylogenetics of Channa genus, and
+              sustainable aquaculture practices.</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- AWARDS -->
-<section class="awards-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Awards &amp; Fellowships</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="awards-grid">
-      <div class="award-card"><div class="award-icon"><i class="fa fa-gavel"></i></div><div><div class="award-year">2026</div><div class="award-title">Patent Granted — Ball milled nano Hydroxyapatite (nHAp) — P. No. 577346</div></div></div>
-      <div class="award-card"><div class="award-icon"><i class="fa fa-user-tie"></i></div><div><div class="award-year">2026</div><div class="award-title">Subject Expert, Selection Committee for CAS (Professor Level 14), Yogi Vemana University</div></div></div>
-      <div class="award-card"><div class="award-icon"><i class="fa fa-award"></i></div><div><div class="award-year">2025</div><div class="award-title">Best Poster Award — MeitY-INUP-i2i Workshop, Centre for Nanotechnology, IIT Guwahati</div></div></div>
-      <div class="award-card"><div class="award-icon"><i class="fa fa-medal"></i></div><div><div class="award-year">2001</div><div class="award-title">University Gold Medal, M.Sc. Animal Sciences — I rank among SC/ST students, University of Hyderabad</div></div></div>
-      <div class="award-card"><div class="award-icon"><i class="fa fa-flask"></i></div><div><div class="award-year">2001</div><div class="award-title">Joint CSIR-UGC Junior Research Fellowship (JRF) &amp; NET in Life Sciences (December 2000)</div></div></div>
-      <div class="award-card"><div class="award-icon"><i class="fa fa-graduation-cap"></i></div><div><div class="award-year">2001</div><div class="award-title">Qualified GATE – 2001</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ADMIN RESPONSIBILITIES -->
-<section class="admin-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Administrative Responsibilities</h2>
-      <div class="underline"></div>
-      <p>Positions, committee roles, and institutional contributions at Adikavi Nannaya University and other bodies.</p>
-    </div>
-
-    <!-- Administrative Roles -->
-    <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Administrative &amp; Leadership Positions</h3>
-    <div class="admin-list" style="margin-bottom: 2.5rem;">
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Principal, University College of Science and Technology, AKNU</div><div class="admin-period">From July 27, 2026</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Dean of Examinations, Adikavi Nannaya University</div><div class="admin-period">January 2025 – May 2026</div><div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Organized 14th &amp; 15th Combined convocation, Special drive Examinations for UG, Professional and PG Courses, Shifted to new examination building.</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Head, Dept. of Zoology</div><div class="admin-period">2024</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Head-in-charge, Dept. of Food Science &amp; Technology</div><div class="admin-period">October 2023</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Co-ordinator, AKNU – NAD – ABC Cell</div><div class="admin-period">2023</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Head, Dept. of Biochemistry</div><div class="admin-period">November 2021</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Assistant Dean of Examinations</div><div class="admin-period">2017 – 2025</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Coordinator of University SC/ST Cell</div><div class="admin-period">2016 – 2017</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Additional Director of Admissions</div><div class="admin-period">2015 – 2016</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Warden of University Women’s Hostel</div><div class="admin-period">2014 – 2015</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Assistant Chief Superintendent of Exams</div><div class="admin-period">2012, 2014</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Coordinator of M.S. Biotechnology and M.S. Microbiology (5Yr Integrated Courses)</div><div class="admin-period">2008</div><div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed course curriculum.</div></div></div>
-    </div>
-
-    <!-- Committees & Boards -->
-    <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Board of Studies &amp; Committees</h3>
-    <div class="admin-list" style="margin-bottom: 2.5rem;">
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Central Purchase Committee, AKNU</div><div class="admin-period">July 27, 2026</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Technical Coordination Committee, AKNU</div><div class="admin-period">2025</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Procurement Committee, PM-USHA</div><div class="admin-period">2025</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Chairman, PG BoS, Forensic Science &amp; Cyber Forensics</div><div class="admin-period">2023</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Convenor, PG BoS, Food Science &amp; Technology</div><div class="admin-period">2023</div><div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed syllabus and course curriculum.</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">First Chairperson, UG BoS, Forensic Science &amp; Cyber Forensics</div><div class="admin-period">2021</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Convener, PG BoS, Aquaculture &amp; Zoology</div><div class="admin-period">2018 – 2019</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Board of Studies, M.Sc. Zoology, M.S. Biotechnology, M.S. Microbiology</div><div class="admin-period">2012</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of PG Board of Studies (Aquaculture, Biochemistry, Biotechnology, Microbiology, Zoology)</div><div class="admin-period">Since 2010</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Central Purchase Committee (CPC)</div><div class="admin-period">2007 – 2008</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Documentation Committee, Adikavi Nannaya University</div></div></div>
-      <div class="admin-item"><div class="admin-dot"></div><div><div class="admin-role">Member of Technical Committee, Adikavi Nannaya University</div></div></div>
-    </div>
-
-    <!-- Institutional & External Responsibilities -->
-    <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Institutional &amp; External Responsibilities</h3>
-    <ul style="list-style: none; padding-left: 0; display: grid; gap: 0.75rem;">
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>ISO certified University internal auditor</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Actively involved in all Convocations (member of various committees) and served as Anchor (2018, 2020, 2024)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Committee member for preparing the University for UGC visit to attain 12B status (2018)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Conducted Science Day Celebrations at Adikavi Nannaya University (2011)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>In-charge of Youth Festival, Adikavi Nannaya University (2008)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Co-editor of University News Bulletin (2012)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Joint Inspection Committee for sanctioning new courses to affiliated colleges</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of FFCA inspection committees for college affiliations</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Inspection committee for Hostels attached to affiliated colleges</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of Academic Councils of various affiliated colleges (since 2013–14)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of Board of Studies in Zoology, Aquaculture, Biochemistry, Microbiology, Biotechnology, &amp; Environmental Studies for affiliated colleges (since 2013–14)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Local Observer for AP-SET (2012, 2016), APICET (2015), and EAMCET (2015)</span></li>
-      <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);"><i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Polling Officer, Assembly General Elections (2014)</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- RESEARCH OPENINGS -->
-<section class="openings-section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2>Research Openings</h2>
-      <div class="underline" style="background:var(--copper-light);"></div>
-      <p style="color:rgba(255,255,255,0.78);">Motivated candidates are invited to join the lab for doctoral and project research.</p>
-    </div>
-    <div class="openings-grid">
-      <div class="opening-card">
-        <h3><i class="fa fa-microscope" style="margin-right:0.5rem;"></i>Ph.D. Positions</h3>
-        <p>Full-time and part-time doctoral positions in Neurophysiology, Nanobioscience, and Aquatic Biology. JRF/SRF fellowship holders preferred.</p>
+  <!-- RECENT HIGHLIGHTS -->
+  <section class="highlights-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Recent Highlights</h2>
+        <div class="underline"></div>
+        <p>Awards, patents, conferences, and milestones from the lab.</p>
       </div>
-      <div class="opening-card">
-        <h3><i class="fa fa-project-diagram" style="margin-right:0.5rem;"></i>Project Fellows</h3>
-        <p>Project fellowship positions available under RUSA and PM-USHA funded projects. M.Sc. in Life Sciences required.</p>
+      <div class="highlights-track-wrap">
+        <div class="highlights-track" id="highlightsTrack">
+          <div class="highlight-card">
+            <div class="highlight-card-img"><img src="Images/highlight1.jpg" alt="Patent"></div>
+            <div class="highlight-card-body">
+              <span class="badge badge-patent">Patent</span>
+              <h3>Ball Milled Nano Hydroxyapatite (nHAp) — Patent Granted</h3>
+              <p>Patent No. 577346 granted on January 2, 2026.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-card-img"><img src="Images/highlight2.jpg" alt="Award"></div>
+            <div class="highlight-card-body">
+              <span class="badge badge-award">Award</span>
+              <h3>Best Poster Award — IIT Guwahati</h3>
+              <p>MeitY-INUP-i2i Familiarization Workshop, Centre for Nanotechnology, June 2025.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-card-img"><img src="Images/highlight3.jpg" alt="Event"></div>
+            <div class="highlight-card-body">
+              <span class="badge badge-event">Event</span>
+              <h3>Aahaar Mahotsav — World Food Day 2025</h3>
+              <p>Organized at Adikavi Nannaya University, October 15–16, 2025.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-card-img"><img src="Images/highlight4.jpg" alt="Conference"></div>
+            <div class="highlight-card-body">
+              <span class="badge badge-conference">Conference</span>
+              <h3>Invited Speaker — SERB International Conference, KLEF</h3>
+              <p>Advanced Nanomaterials for Energy Storage Applications, Guntur, December 2024.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-card-img"><img src="Images/highlight5.jpg" alt="Appointment"></div>
+            <div class="highlight-card-body">
+              <span class="badge badge-appointment">Appointment</span>
+              <h3>Appointed Principal — University College of Science &amp; Technology</h3>
+              <p>Adikavi Nannaya University, July 27, 2026.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="opening-card">
-        <h3><i class="fa fa-envelope" style="margin-right:0.5rem;"></i>Contact</h3>
-        <p>Write to <strong style="color:var(--copper-light);">dk.zoo@aknu.edu.in</strong> with your CV, research interests, and academic credentials.</p>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="nextBtn" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">
-        <div class="footer-photo"><img src="Images/profile.jpg" alt="Dr. Kalyani Dasari"></div>
+  <!-- COMBINED ACADEMIC CREDENTIALS & WORK EXPERIENCE -->
+  <section class="academic-work-section">
+    <div class="section-inner">
+      <div class="academic-work-grid">
+        <!-- LEFT COLUMN: ACADEMIC CREDENTIALS -->
         <div>
-          <div class="footer-name">Dr. Kalyani Dasari</div>
-          <div class="footer-title">Professor, Dept. of Zoology &amp; Principal, University College of Science and Technology<br>Adikavi Nannaya University</div>
+          <div class="section-header">
+            <h2>Academic Credentials</h2>
+            <div class="underline"></div>
+            <p>Educational background and academic qualifications.</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot gold"></div>
+              <div class="timeline-year">2008</div>
+              <div class="timeline-title">Ph.D. in Animal Sciences (Neurophysiology)</div>
+              <div class="timeline-sub">University of Hyderabad</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot gold"></div>
+              <div class="timeline-year">2001</div>
+              <div class="timeline-title">M.Sc. in Animal Sciences</div>
+              <div class="timeline-sub">University of Hyderabad</div>
+              <div class="timeline-note">🏅 University Gold Medal — I rank among SC/ST students</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1999</div>
+              <div class="timeline-title">B.Sc. (Botany, Zoology, Chemistry)</div>
+              <div class="timeline-sub">Sri Venkateswara University, Tirupathi</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1996</div>
+              <div class="timeline-title">+2 / Intermediate (Bi.P.C)</div>
+              <div class="timeline-sub">B.I.E., Andhra Pradesh</div>
+              <div class="timeline-note">Distinction</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1994</div>
+              <div class="timeline-title">10th / SSC (CBSE)</div>
+              <div class="timeline-sub">Jawahar Navodaya Vidyalaya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: WORK EXPERIENCE -->
+        <div>
+          <div class="section-header">
+            <h2>Work Experience</h2>
+            <div class="underline"></div>
+            <p>Professional positions at Adikavi Nannaya University.</p>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="exp-table">
+              <thead>
+                <tr>
+                  <th>PERIOD</th>
+                  <th>POSITION</th>
+                  <th>INSTITUTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2022 – Present</td>
+                  <td>Professor, Dept. of Zoology</td>
+                  <td>Adikavi Nannaya University</td>
+                </tr>
+                <tr>
+                  <td>2019 – 2022</td>
+                  <td>Associate Professor, Dept. of Zoology</td>
+                  <td>Adikavi Nannaya University</td>
+                </tr>
+                <tr>
+                  <td>2007 – 2019</td>
+                  <td>Assistant Professor, Dept. of Zoology</td>
+                  <td>Adikavi Nannaya University</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer-nav">
-      <h4>Navigation</h4>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="students.html">Students</a>
-      <a href="publications.html">Publications</a>
-      <a href="courses.html">Courses</a>
-      <a href="gallery.html">Gallery</a>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Awards &amp; Fellowships</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="awards-grid">
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-gavel"></i></div>
+          <div>
+            <div class="award-year">2026</div>
+            <div class="award-title">Patent Granted — Ball milled nano Hydroxyapatite (nHAp) — P. No. 577346</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-user-tie"></i></div>
+          <div>
+            <div class="award-year">2026</div>
+            <div class="award-title">Subject Expert, Selection Committee for CAS (Professor Level 14), Yogi Vemana
+              University</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-award"></i></div>
+          <div>
+            <div class="award-year">2025</div>
+            <div class="award-title">Best Poster Award — MeitY-INUP-i2i Workshop, Centre for Nanotechnology, IIT
+              Guwahati</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-medal"></i></div>
+          <div>
+            <div class="award-year">2001</div>
+            <div class="award-title">University Gold Medal, M.Sc. Animal Sciences — I rank among SC/ST students,
+              University of Hyderabad</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-flask"></i></div>
+          <div>
+            <div class="award-year">2001</div>
+            <div class="award-title">Joint CSIR-UGC Junior Research Fellowship (JRF) &amp; NET in Life Sciences
+              (December 2000)</div>
+          </div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <div class="award-year">2001</div>
+            <div class="award-title">Qualified GATE – 2001</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <div class="footer-contact-item"><i class="fa fa-envelope"></i><span>dk.zoo@aknu.edu.in</span></div>
-      <div class="footer-contact-item"><i class="fa fa-phone"></i><span>098494 19160</span></div>
-      <div class="footer-contact-item"><i class="fa fa-map-marker-alt"></i><span>Adikavi Nannaya University, Rajamahendravaram — 533296, Andhra Pradesh, India</span></div>
-      <div class="footer-contact-item"><i class="fa fa-globe"></i><span><a href="https://aknu.edu.in" style="color:var(--copper-light);">aknu.edu.in</a></span></div>
+  </section>
+
+  <!-- ADMIN RESPONSIBILITIES -->
+  <section class="admin-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Administrative Responsibilities</h2>
+        <div class="underline"></div>
+        <p>Positions, committee roles, and institutional contributions at Adikavi Nannaya University and other bodies.
+        </p>
+      </div>
+
+      <!-- Administrative Roles -->
+      <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Administrative &amp; Leadership
+        Positions</h3>
+      <div class="admin-list" style="margin-bottom: 2.5rem;">
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Principal, University College of Science and Technology, AKNU</div>
+            <div class="admin-period">From July 27, 2026</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Dean of Examinations, Adikavi Nannaya University</div>
+            <div class="admin-period">January 2025 – May 2026</div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Organized 14th &amp; 15th
+              Combined convocation, Special drive Examinations for UG, Professional and PG Courses, Shifted to new
+              examination building.</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Head, Dept. of Zoology</div>
+            <div class="admin-period">2024</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Head-in-charge, Dept. of Food Science &amp; Technology</div>
+            <div class="admin-period">October 2023</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Co-ordinator, AKNU – NAD – ABC Cell</div>
+            <div class="admin-period">2023</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Head, Dept. of Biochemistry</div>
+            <div class="admin-period">November 2021</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Assistant Dean of Examinations</div>
+            <div class="admin-period">2017 – 2025</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Coordinator of University SC/ST Cell</div>
+            <div class="admin-period">2016 – 2017</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Additional Director of Admissions</div>
+            <div class="admin-period">2015 – 2016</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Warden of University Women’s Hostel</div>
+            <div class="admin-period">2014 – 2015</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Assistant Chief Superintendent of Exams</div>
+            <div class="admin-period">2012, 2014</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Coordinator of M.S. Biotechnology and M.S. Microbiology (5Yr Integrated
+              Courses)</div>
+            <div class="admin-period">2008</div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed course curriculum.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Committees & Boards -->
+      <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Board of Studies &amp; Committees
+      </h3>
+      <div class="admin-list" style="margin-bottom: 2.5rem;">
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Central Purchase Committee, AKNU</div>
+            <div class="admin-period">July 27, 2026</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Technical Coordination Committee, AKNU</div>
+            <div class="admin-period">2025</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Procurement Committee, PM-USHA</div>
+            <div class="admin-period">2025</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Chairman, PG BoS, Forensic Science &amp; Cyber Forensics</div>
+            <div class="admin-period">2023</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Convenor, PG BoS, Food Science &amp; Technology</div>
+            <div class="admin-period">2023</div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed syllabus and course
+              curriculum.</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">First Chairperson, UG BoS, Forensic Science &amp; Cyber Forensics</div>
+            <div class="admin-period">2021</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Convener, PG BoS, Aquaculture &amp; Zoology</div>
+            <div class="admin-period">2018 – 2019</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Board of Studies, M.Sc. Zoology, M.S. Biotechnology, M.S. Microbiology
+            </div>
+            <div class="admin-period">2012</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of PG Board of Studies (Aquaculture, Biochemistry, Biotechnology,
+              Microbiology, Zoology)</div>
+            <div class="admin-period">Since 2010</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Central Purchase Committee (CPC)</div>
+            <div class="admin-period">2007 – 2008</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Documentation Committee, Adikavi Nannaya University</div>
+          </div>
+        </div>
+        <div class="admin-item">
+          <div class="admin-dot"></div>
+          <div>
+            <div class="admin-role">Member of Technical Committee, Adikavi Nannaya University</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Institutional & External Responsibilities -->
+      <h3 style="font-family:'Lora', serif; color: var(--green); margin-bottom: 1rem;">Institutional &amp; External
+        Responsibilities</h3>
+      <ul style="list-style: none; padding-left: 0; display: grid; gap: 0.75rem;">
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>ISO certified
+            University internal auditor</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Actively involved in
+            all Convocations (member of various committees) and served as Anchor (2018, 2020, 2024)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Committee member for
+            preparing the University for UGC visit to attain 12B status (2018)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Conducted Science Day
+            Celebrations at Adikavi Nannaya University (2011)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>In-charge of Youth
+            Festival, Adikavi Nannaya University (2008)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Co-editor of University
+            News Bulletin (2012)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Joint
+            Inspection Committee for sanctioning new courses to affiliated colleges</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of FFCA
+            inspection committees for college affiliations</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Inspection
+            committee for Hostels attached to affiliated colleges</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of
+            Academic Councils of various affiliated colleges (since 2013–14)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of
+            Board of Studies in Zoology, Aquaculture, Biochemistry, Microbiology, Biotechnology, &amp; Environmental
+            Studies for affiliated colleges (since 2013–14)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Local Observer for
+            AP-SET (2012, 2016), APICET (2015), and EAMCET (2015)</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
+          <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Polling Officer,
+            Assembly General Elections (2014)</span></li>
+      </ul>
     </div>
-  </div>
-  <div class="footer-bottom">&copy; 2026 Designed & Developed by Banda Karthik(bandakarthik16@gmail.com)</div>
-</footer>
+  </section>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  <!-- RESEARCH OPENINGS -->
+  <section class="openings-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Research Openings</h2>
+        <div class="underline" style="background:var(--copper-light);"></div>
+        <p style="color:rgba(255,255,255,0.78);">Motivated candidates are invited to join the lab for doctoral and
+          project research.</p>
+      </div>
+      <div class="openings-grid">
+        <div class="opening-card">
+          <h3><i class="fa fa-microscope" style="margin-right:0.5rem;"></i>Ph.D. Positions</h3>
+          <p>Full-time and part-time doctoral positions in Neurophysiology, Nanobioscience, and Aquatic Biology. JRF/SRF
+            fellowship holders preferred.</p>
+        </div>
+        <div class="opening-card">
+          <h3><i class="fa fa-project-diagram" style="margin-right:0.5rem;"></i>Project Fellows</h3>
+          <p>Project fellowship positions available under RUSA and PM-USHA funded projects. M.Sc. in Life Sciences
+            required.</p>
+        </div>
+        <div class="opening-card">
+          <h3><i class="fa fa-envelope" style="margin-right:0.5rem;"></i>Contact</h3>
+          <p>Write to <strong style="color:var(--copper-light);">dk.zoo@aknu.edu.in</strong> with your CV, research
+            interests, and academic credentials.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('highlightsTrack');
-    const slides = Array.from(track.children);
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari" class="footer-photo" />
+        <div class="footer-info">
+          <h3>Dr. Kalyani Dasari</h3>
+          <p>Professor, Dept. of Zoology &amp; Principal, University College of Science and Technology <br />
+            Adikavi Nannaya University, Rajamahendravaram — 533296, Andhra Pradesh, India.</p>
+          <p class="contact-line">
+            📧 <a href="mailto:dk.zoo@aknu.edu.in">dk.zoo@aknu.edu.in</a> &nbsp;|&nbsp; 📞 +91-9849419160
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Designed &amp; Developed by Banda Karthik (bandakarthik16@gmail.com)</span>
+        <span>Department of Zoology · <a href="https://aknu.edu.in" target="_blank"
+            style="color:var(--copper-light);">aknu.edu.in ↗</a></span>
+      </div>
+    </div>
+  </footer>
 
-    let currentIndex = 0;
-    let autoPlayTimer = null;
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('highlightsTrack');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-    function moveToSlide(index) {
-      if (index < 0) {
-        currentIndex = slides.length - 1;
-      } else if (index >= slides.length) {
-        currentIndex = 0;
-      } else {
-        currentIndex = index;
+      let currentIndex = 0;
+      let autoPlayTimer = null;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
       }
-      updateCarousel();
-    }
 
-    nextBtn.addEventListener('click', () => {
-      moveToSlide(currentIndex + 1);
-      resetAutoPlay();
-    });
+      function moveToSlide(index) {
+        if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else if (index >= slides.length) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+        updateCarousel();
+      }
 
-    prevBtn.addEventListener('click', () => {
-      moveToSlide(currentIndex - 1);
-      resetAutoPlay();
-    });
-
-    function startAutoPlay() {
-      autoPlayTimer = setInterval(() => {
+      nextBtn.addEventListener('click', () => {
         moveToSlide(currentIndex + 1);
-      }, 5000);
-    }
+        resetAutoPlay();
+      });
 
-    function resetAutoPlay() {
-      clearInterval(autoPlayTimer);
+      prevBtn.addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+        resetAutoPlay();
+      });
+
+      function startAutoPlay() {
+        autoPlayTimer = setInterval(() => {
+          moveToSlide(currentIndex + 1);
+        }, 5000);
+      }
+
+      function resetAutoPlay() {
+        clearInterval(autoPlayTimer);
+        startAutoPlay();
+      }
+
       startAutoPlay();
-    }
-
-    startAutoPlay();
-  });
-</script>
+    });
+  </script>
 </body>
+
 </html>

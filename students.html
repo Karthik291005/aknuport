@@ -426,18 +426,85 @@
       background: var(--copper-light);
     }
 
-    footer {
+    /* ── FOOTER ── */
+    .site-footer {
       background: var(--green-dark);
-      color: white;
-      padding: 2rem 1.5rem;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 48px 0 28px;
+      margin-top: 80px;
+    }
+
+    .site-footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 24px;
+    }
+
+    .footer-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--copper);
+      flex-shrink: 0;
+    }
+
+    .footer-info h3 {
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .footer-info p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .footer-info .contact-line {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .footer-info .contact-line a {
+      color: var(--copper-light);
+      text-decoration: none;
+    }
+
+    .footer-info .contact-line a:hover {
+      text-decoration: underline;
     }
 
     .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.45);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
     }
 
     /* Card Layout & Header Styles */
@@ -684,7 +751,8 @@
             <div class="label">Department / Centre</div>
             <div class="value">Dept. of Zoology, AKNU</div>
             <div class="label">Thesis Title</div>
-            <div class="value">A comparative analysis of Fatty acid compositions and profiling of Channa striata in wild and cultured environments.</div>
+            <div class="value">A comparative analysis of Fatty acid compositions and profiling of Channa striata in wild
+              and cultured environments.</div>
             <a href="mailto:dk.zoo@aknu.edu.in"><i class="fa fa-envelope"></i> Contact Scholar</a>
           </div>
         </div>
@@ -704,7 +772,8 @@
             <div class="label">Department / Centre</div>
             <div class="value">Dept. of Zoology, AKNU</div>
             <div class="label">Thesis Title</div>
-            <div class="value">Anti-cancer activity and cytotoxicity of green carbon dots and metal nanocomposites with gene expression study.</div>
+            <div class="value">Anti-cancer activity and cytotoxicity of green carbon dots and metal nanocomposites with
+              gene expression study.</div>
             <a href="mailto:dk.zoo@aknu.edu.in"><i class="fa fa-envelope"></i> Contact Scholar</a>
           </div>
         </div>
@@ -724,7 +793,8 @@
             <div class="label">Department / Centre</div>
             <div class="value">Dept. of Zoology, AKNU</div>
             <div class="label">Thesis Title</div>
-            <div class="value">Green synthesis of Fe, Zn and Fe-Zn Nanocomposite using carbon dots derived from Euphorbia Heterophylla</div>
+            <div class="value">Green synthesis of Fe, Zn and Fe-Zn Nanocomposite using carbon dots derived from
+              Euphorbia Heterophylla</div>
             <a href="mailto:dk.zoo@aknu.edu.in"><i class="fa fa-envelope"></i> Contact Scholar</a>
           </div>
         </div>
@@ -764,7 +834,9 @@
             <div class="label">Department / Centre</div>
             <div class="value">Dept. of Zoology, AKNU</div>
             <div class="label">Thesis Title</div>
-            <div class="value">Integrative Eco-Epidemiological Investigation into the Mortality Dynamics of Pelecanus philippensis and Mycteria leucocephala: A Multi-Omics and Biochemical Approach to Conservation at Telineelapuram Bird Sanctuary.</div>
+            <div class="value">Integrative Eco-Epidemiological Investigation into the Mortality Dynamics of Pelecanus
+              philippensis and Mycteria leucocephala: A Multi-Omics and Biochemical Approach to Conservation at
+              Telineelapuram Bird Sanctuary.</div>
             <a href="mailto:dk.zoo@aknu.edu.in"><i class="fa fa-envelope"></i> Contact Scholar</a>
           </div>
         </div>
@@ -842,8 +914,26 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-bottom">&copy; 2026 Designed & Developed by Banda Karthik(bandakarthik16@gmail.com)</div>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari" class="footer-photo" />
+        <div class="footer-info">
+          <h3>Dr. Kalyani Dasari</h3>
+          <p>Professor, Dept. of Zoology &amp; Principal, University College of Science and Technology <br />
+            Adikavi Nannaya University, Rajamahendravaram — 533296, Andhra Pradesh, India.</p>
+          <p class="contact-line">
+            📧 <a href="mailto:dk.zoo@aknu.edu.in">dk.zoo@aknu.edu.in</a> &nbsp;|&nbsp; 📞 +91-9849419160
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Designed &amp; Developed by Banda Karthik (bandakarthik16@gmail.com)</span>
+        <span>Department of Zoology · <a href="https://aknu.edu.in" target="_blank"
+            style="color:var(--copper-light);">aknu.edu.in ↗</a></span>
+      </div>
+    </div>
   </footer>
   <script>
     document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
