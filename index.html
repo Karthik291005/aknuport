@@ -368,7 +368,7 @@
 
     .research-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 14px 40px rgba(27, 67, 50, 0.22);
+      box-shadow: 0 14px 40px rgba(0, 5, 3, 0.22);
     }
 
     .research-card img {
@@ -389,7 +389,7 @@
     }
 
     .research-card:hover .overlay {
-      background: linear-gradient(to top, rgba(13, 43, 30, 0.97) 60%, rgba(13, 43, 30, 0.55) 100%);
+      background: linear-gradient(to top, rgba(1, 23, 13, 0.97) 60%, rgba(13, 43, 30, 0.55) 100%);
     }
 
     .research-card .r-num {
@@ -426,12 +426,17 @@
       background: white;
     }
 
+    .carousel-container {
+      position: relative;
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 0 50px;
+    }
+
     .highlights-track-wrap {
       overflow: hidden;
-      position: relative;
       border-radius: 12px;
-      max-width: 850px;
-      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     .highlights-track {
@@ -447,19 +452,27 @@
       border-radius: 12px;
       overflow: hidden;
       background: white;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
 
     .highlight-card-img {
-      height: 340px;
-      overflow: hidden;
-      background: #f8f9fa;
+      height: 420px;
+      width: 100%;
+      background: rgb(250, 246, 246);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
     }
 
     .highlight-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     }
 
     .highlight-card-body {
@@ -516,32 +529,64 @@
       line-height: 1.6;
     }
 
-    .carousel-controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
+    /* SIDE PREV/NEXT BUTTONS */
     .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: var(--green);
-      color: white;
-      border: none;
+      background: white;
+      color: var(--green);
+      border: 1px solid var(--border);
       cursor: pointer;
       font-size: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: all 0.2s ease;
+      z-index: 10;
     }
 
     .carousel-btn:hover {
-      background: var(--green-light);
-      transform: scale(1.05);
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-btn.prev {
+      left: 0;
+    }
+
+    .carousel-btn.next {
+      right: 0;
+    }
+
+    /* CAROUSEL DOTS */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--copper);
+      width: 24px;
+      border-radius: 12px;
     }
 
     /* ACADEMIC & WORK GRID */
@@ -822,7 +867,7 @@
       line-height: 1.6;
     }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     .site-footer {
       background: var(--green-dark);
       color: rgba(255, 255, 255, 0.85);
@@ -891,6 +936,16 @@
     }
 
     @media (max-width: 768px) {
+      .carousel-container {
+        padding: 0 20px;
+      }
+
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+      }
+
       .footer-inner {
         flex-direction: column;
         gap: 16px;
@@ -921,11 +976,6 @@
       .hero-photo-frame {
         width: 200px;
         height: 200px;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
       }
 
       .academic-work-grid {
@@ -993,7 +1043,7 @@
         <img src="Images/aknu_logo.png" alt="AKNU Logo">
         <div class="nav-brand-text">
           <div class="name">Dr. Kalyani Dasari</div>
-          <div class="dept">Dept. of Zoology · AKNU</div>
+          <div class="dept">Department of Zoology · AKNU</div>
         </div>
       </a>
       <div class="nav-links" id="navLinks">
@@ -1122,53 +1172,56 @@
         <div class="underline"></div>
         <p>Awards, patents, conferences, and milestones from the lab.</p>
       </div>
-      <div class="highlights-track-wrap">
-        <div class="highlights-track" id="highlightsTrack">
-          <div class="highlight-card">
-            <div class="highlight-card-img"><img src="Images/highlight1.jpg" alt="Patent"></div>
-            <div class="highlight-card-body">
-              <span class="badge badge-patent">Patent</span>
-              <h3>Ball Milled Nano Hydroxyapatite (nHAp) — Patent Granted</h3>
-              <p>Patent No. 577346 granted on January 2, 2026.</p>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+
+        <div class="highlights-track-wrap">
+          <div class="highlights-track" id="highlightsTrack">
+            <div class="highlight-card">
+              <div class="highlight-card-img"><img src="Images/highlight1.jpeg" alt="Anchor"></div>
+              <div class="highlight-card-body">
+                <span class="badge badge-patent">Anchor</span>
+                <h3>Anchor at Adikavi Nannaya University Convocation - 2024</h3>
+              </div>
             </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card-img"><img src="Images/highlight2.jpg" alt="Award"></div>
-            <div class="highlight-card-body">
-              <span class="badge badge-award">Award</span>
-              <h3>Best Poster Award — IIT Guwahati</h3>
-              <p>MeitY-INUP-i2i Familiarization Workshop, Centre for Nanotechnology, June 2025.</p>
+            <div class="highlight-card">
+              <div class="highlight-card-img"><img src="Images/highlight2.jpeg" alt="Award"></div>
+              <div class="highlight-card-body">
+                <span class="badge badge-award">Award</span>
+                <h3>Best Poster Award — IIT Guwahati</h3>
+                <p>MeitY-INUP-i2i Familiarization Workshop, Centre for Nanotechnology, June 2025.</p>
+              </div>
             </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card-img"><img src="Images/highlight3.jpg" alt="Event"></div>
-            <div class="highlight-card-body">
-              <span class="badge badge-event">Event</span>
-              <h3>Aahaar Mahotsav — World Food Day 2025</h3>
-              <p>Organized at Adikavi Nannaya University, October 15–16, 2025.</p>
+            <div class="highlight-card">
+              <div class="highlight-card-img"><img src="Images/highlight3.jpg" alt="Event"></div>
+              <div class="highlight-card-body">
+                <span class="badge badge-event">Event</span>
+                <h3>Aahaar Mahotsav — World Food Day 2025</h3>
+                <p>Organized at Adikavi Nannaya University, October 15–16, 2025.</p>
+              </div>
             </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card-img"><img src="Images/highlight4.jpg" alt="Conference"></div>
-            <div class="highlight-card-body">
-              <span class="badge badge-conference">Conference</span>
-              <h3>Invited Speaker — SERB International Conference, KLEF</h3>
-              <p>Advanced Nanomaterials for Energy Storage Applications, Guntur, December 2024.</p>
+            <div class="highlight-card">
+              <div class="highlight-card-img"><img src="Images/highlight4.jpg" alt="Conference"></div>
+              <div class="highlight-card-body">
+                <span class="badge badge-conference">Conference</span>
+                <h3>Invited Speaker — SERB International Conference, KLEF</h3>
+                <p>Advanced Nanomaterials for Energy Storage Applications, Guntur, December 2024.</p>
+              </div>
             </div>
-          </div>
-          <div class="highlight-card">
-            <div class="highlight-card-img"><img src="Images/highlight5.jpg" alt="Appointment"></div>
-            <div class="highlight-card-body">
-              <span class="badge badge-appointment">Appointment</span>
-              <h3>Appointed Principal — University College of Science &amp; Technology</h3>
-              <p>Adikavi Nannaya University, July 27, 2026.</p>
+            <div class="highlight-card">
+              <div class="highlight-card-img"><img src="Images/highlight5.jpeg" alt="Conference"></div>
+              <div class="highlight-card-body">
+                <span class="badge badge-appointment">Conference</span>
+                <h3>National Conference on Quantum Biotechnology at IIT- Bombay.</h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
-        <button class="carousel-btn" id="nextBtn" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
+
+        <!-- CAROUSEL DOTS -->
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </div>
   </section>
@@ -1196,7 +1249,7 @@
               <div class="timeline-year">2001</div>
               <div class="timeline-title">M.Sc. in Animal Sciences</div>
               <div class="timeline-sub">University of Hyderabad</div>
-              <div class="timeline-note">🏅 University Gold Medal — I rank among SC/ST students</div>
+              <div class="timeline-note">🏅 University Gold Medal</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -1225,31 +1278,31 @@
           <div class="section-header">
             <h2>Work Experience</h2>
             <div class="underline"></div>
-            <p>Professional positions at Adikavi Nannaya University.</p>
+            <p>Professional Designations at Adikavi Nannaya University.</p>
           </div>
           <div style="overflow-x:auto;">
             <table class="exp-table">
               <thead>
                 <tr>
                   <th>PERIOD</th>
-                  <th>POSITION</th>
+                  <th>DESIGNATION</th>
                   <th>INSTITUTION</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>2022 – Present</td>
-                  <td>Professor, Dept. of Zoology</td>
+                  <td>Professor, Department of Zoology</td>
                   <td>Adikavi Nannaya University</td>
                 </tr>
                 <tr>
                   <td>2019 – 2022</td>
-                  <td>Associate Professor, Dept. of Zoology</td>
+                  <td>Associate Professor, Department of Zoology</td>
                   <td>Adikavi Nannaya University</td>
                 </tr>
                 <tr>
                   <td>2007 – 2019</td>
-                  <td>Assistant Professor, Dept. of Zoology</td>
+                  <td>Assistant Professor, Department of Zoology</td>
                   <td>Adikavi Nannaya University</td>
                 </tr>
               </tbody>
@@ -1260,58 +1313,71 @@
     </div>
   </section>
 
-  <!-- AWARDS -->
+  <!-- AWARDS & ACHIEVEMENTS -->
   <section class="awards-section">
     <div class="section-inner">
       <div class="section-header">
-        <h2>Awards &amp; Fellowships</h2>
+        <h2>Awards &amp; Achievements</h2>
         <div class="underline"></div>
+        <p>Recognition, university distinctions, competitive ranks, and prestigious research credentials</p>
       </div>
+
       <div class="awards-grid">
         <div class="award-card">
-          <div class="award-icon"><i class="fa fa-gavel"></i></div>
+          <div class="award-icon">🏆</div>
           <div>
             <div class="award-year">2026</div>
-            <div class="award-title">Patent Granted — Ball milled nano Hydroxyapatite (nHAp) — P. No. 577346</div>
+            <div class="award-title">Patent Granted — Ball Milled Nano Hydroxyapatite (P. No. 577346)</div>
           </div>
         </div>
+
         <div class="award-card">
-          <div class="award-icon"><i class="fa fa-user-tie"></i></div>
-          <div>
-            <div class="award-year">2026</div>
-            <div class="award-title">Subject Expert, Selection Committee for CAS (Professor Level 14), Yogi Vemana
-              University</div>
-          </div>
-        </div>
-        <div class="award-card">
-          <div class="award-icon"><i class="fa fa-award"></i></div>
+          <div class="award-icon">🥇</div>
           <div>
             <div class="award-year">2025</div>
-            <div class="award-title">Best Poster Award — MeitY-INUP-i2i Workshop, Centre for Nanotechnology, IIT
-              Guwahati</div>
+            <div class="award-title">Best Poster Award — IIT Guwahati (MeitY-INUP-i2i Workshop)</div>
           </div>
         </div>
+
         <div class="award-card">
-          <div class="award-icon"><i class="fa fa-medal"></i></div>
+          <div class="award-icon">🏅</div>
           <div>
-            <div class="award-year">2001</div>
-            <div class="award-title">University Gold Medal, M.Sc. Animal Sciences — I rank among SC/ST students,
+            <div class="award-year">1999 - 2001</div>
+            <div class="award-title">Special University Gold Medal (1st Rank M.Sc. Animal Sciences) —
               University of Hyderabad</div>
           </div>
         </div>
+
         <div class="award-card">
-          <div class="award-icon"><i class="fa fa-flask"></i></div>
+          <div class="award-icon">🏅</div>
           <div>
-            <div class="award-year">2001</div>
-            <div class="award-title">Joint CSIR-UGC Junior Research Fellowship (JRF) &amp; NET in Life Sciences
-              (December 2000)</div>
+            <div class="award-year">1999 - 2001</div>
+            <div class="award-title">Special Gold Medal for M.Sc. Zoology — University of Hyderabad</div>
           </div>
         </div>
+
         <div class="award-card">
-          <div class="award-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div class="award-icon">📜</div>
           <div>
             <div class="award-year">2001</div>
-            <div class="award-title">Qualified GATE – 2001</div>
+            <div class="award-title">Joint CSIR-UGC JRF &amp; NET Qualified (Life Sciences)</div>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">🎓</div>
+          <div>
+            <div class="award-year">2001</div>
+            <div class="award-title">GATE Qualification in Life Sciences</div>
+          </div>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">⭐</div>
+          <div>
+            <div class="award-year">1999</div>
+            <div class="award-title">Secured All India Entrance Rank 6 in M.Sc Animal Sciences — University of Hyderabad
+            </div>
           </div>
         </div>
       </div>
@@ -1335,7 +1401,7 @@
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
-            <div class="admin-role">Principal, University College of Science and Technology, AKNU</div>
+            <div class="admin-role">Principal, University College of Science and Technology, Adikavi Nannaya University</div>
             <div class="admin-period">From July 27, 2026</div>
           </div>
         </div>
@@ -1352,29 +1418,29 @@
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
-            <div class="admin-role">Head, Dept. of Zoology</div>
-            <div class="admin-period">2024</div>
+            <div class="admin-role">Head, Department of Zoology</div>
+            <div class="admin-period">From April 2024</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
-            <div class="admin-role">First Head-in-charge, Dept. of Food Science &amp; Technology</div>
-            <div class="admin-period">October 2023</div>
+            <div class="admin-role">First Head-in-charge, Department of Food Science &amp; Technology</div>
+            <div class="admin-period">From October 2023</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
             <div class="admin-role">First Co-ordinator, AKNU – NAD – ABC Cell</div>
-            <div class="admin-period">2023</div>
+            <div class="admin-period">2023 - 2026</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
-            <div class="admin-role">Head, Dept. of Biochemistry</div>
-            <div class="admin-period">November 2021</div>
+            <div class="admin-role">Head, Department of Biochemistry</div>
+            <div class="admin-period">2021 - 2026</div>
           </div>
         </div>
         <div class="admin-item">
@@ -1431,37 +1497,36 @@
           <div class="admin-dot"></div>
           <div>
             <div class="admin-role">Member of Central Purchase Committee, AKNU</div>
-            <div class="admin-period">July 27, 2026</div>
+            <div class="admin-period">From July, 2026</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
             <div class="admin-role">Member of Technical Coordination Committee, AKNU</div>
-            <div class="admin-period">2025</div>
+            <div class="admin-period">From 2025</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
             <div class="admin-role">Member of Procurement Committee, PM-USHA</div>
-            <div class="admin-period">2025</div>
+            <div class="admin-period">From 2025</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
-            <div class="admin-role">Chairman, PG BoS, Forensic Science &amp; Cyber Forensics</div>
-            <div class="admin-period">2023</div>
+            <div class="admin-role">First Chairperson, PG BoS, Forensic Science &amp; Cyber Forensics</div>
+            <div class="admin-period">From 2023</div>
           </div>
         </div>
         <div class="admin-item">
           <div class="admin-dot"></div>
           <div>
             <div class="admin-role">First Convenor, PG BoS, Food Science &amp; Technology</div>
-            <div class="admin-period">2023</div>
-            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed syllabus and course
-              curriculum.</div>
+            <div class="admin-period">From 2023</div>
+            <div style="font-size: 0.8rem; color: var(--text-light); margin-top: 3px;">Designed course curriculum and syllabus along with an advisory member.</div>
           </div>
         </div>
         <div class="admin-item">
@@ -1521,85 +1586,69 @@
       <ul style="list-style: none; padding-left: 0; display: grid; gap: 0.75rem;">
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>ISO certified
-            University internal auditor</span></li>
+            University internal auditor</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Actively involved in
-            all Convocations (member of various committees) and served as Anchor (2018, 2020, 2024)</span></li>
+            all Convocations (member of various committees) and served as Anchor (2018, 2020, 2024)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Committee member for
-            preparing the University for UGC visit to attain 12B status (2018)</span></li>
+            preparing the University for UGC visit to attain 12B status (2018)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Conducted Science Day
-            Celebrations at Adikavi Nannaya University (2011)</span></li>
+            Celebrations at Adikavi Nannaya University (2011)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>In-charge of Youth
-            Festival, Adikavi Nannaya University (2008)</span></li>
+            Festival, Adikavi Nannaya University (2008)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Co-editor of University
-            News Bulletin (2012)</span></li>
+            News Bulletin (2012)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Joint
-            Inspection Committee for sanctioning new courses to affiliated colleges</span></li>
+            Inspection Committee for sanctioning new courses to affiliated colleges</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of FFCA
-            inspection committees for college affiliations</span></li>
+            inspection committees for college affiliations</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Member of Inspection
-            committee for Hostels attached to affiliated colleges</span></li>
+            committee for Hostels attached to affiliated colleges</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of
-            Academic Councils of various affiliated colleges (since 2013–14)</span></li>
+            Academic Councils of various affiliated colleges (since 2013–14)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>University nominee of
             Board of Studies in Zoology, Aquaculture, Biochemistry, Microbiology, Biotechnology, &amp; Environmental
-            Studies for affiliated colleges (since 2013–14)</span></li>
+            Studies for affiliated colleges (since 2013–14)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Local Observer for
-            AP-SET (2012, 2016), APICET (2015), and EAMCET (2015)</span></li>
+            AP-SET (2012, 2016), APICET (2015), and EAMCET (2015)</span>
+        </li>
         <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.88rem; color: var(--text-dark);">
           <i class="fa fa-check-circle" style="color: var(--copper); margin-top: 4px;"></i><span>Polling Officer,
-            Assembly General Elections (2014)</span></li>
+            Assembly General Elections (2014)</span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <!-- RESEARCH OPENINGS -->
-  <section class="openings-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <h2>Research Openings</h2>
-        <div class="underline" style="background:var(--copper-light);"></div>
-        <p style="color:rgba(255,255,255,0.78);">Motivated candidates are invited to join the lab for doctoral and
-          project research.</p>
-      </div>
-      <div class="openings-grid">
-        <div class="opening-card">
-          <h3><i class="fa fa-microscope" style="margin-right:0.5rem;"></i>Ph.D. Positions</h3>
-          <p>Full-time and part-time doctoral positions in Neurophysiology, Nanobioscience, and Aquatic Biology. JRF/SRF
-            fellowship holders preferred.</p>
-        </div>
-        <div class="opening-card">
-          <h3><i class="fa fa-project-diagram" style="margin-right:0.5rem;"></i>Project Fellows</h3>
-          <p>Project fellowship positions available under RUSA and PM-USHA funded projects. M.Sc. in Life Sciences
-            required.</p>
-        </div>
-        <div class="opening-card">
-          <h3><i class="fa fa-envelope" style="margin-right:0.5rem;"></i>Contact</h3>
-          <p>Write to <strong style="color:var(--copper-light);">dk.zoo@aknu.edu.in</strong> with your CV, research
-            interests, and academic credentials.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ FOOTER ═══ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
         <img src="Images/profile.jpg" alt="Dr. Kalyani Dasari" class="footer-photo" />
         <div class="footer-info">
           <h3>Dr. Kalyani Dasari</h3>
-          <p>Professor, Dept. of Zoology &amp; Principal, University College of Science and Technology <br />
+          <p>Professor, Department of Zoology &amp; Principal, University College of Science and Technology <br />
             Adikavi Nannaya University, Rajamahendravaram — 533296, Andhra Pradesh, India.</p>
           <p class="contact-line">
             📧 <a href="mailto:dk.zoo@aknu.edu.in">dk.zoo@aknu.edu.in</a> &nbsp;|&nbsp; 📞 +91-9849419160
@@ -1624,12 +1673,30 @@
       const slides = Array.from(track.children);
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
 
       let currentIndex = 0;
       let autoPlayTimer = null;
 
+      // Create dots dynamically
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          moveToSlide(idx);
+          resetAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
       function updateCarousel() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
       }
 
       function moveToSlide(index) {

@@ -243,12 +243,16 @@
       cursor: pointer;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
       background: var(--cream);
+      height: 250px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
     }
 
     .gallery-item img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
       display: block;
       transition: transform 0.4s;
     }
@@ -483,108 +487,107 @@
       <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span
           style="color:rgba(255,255,255,0.7);">Gallery</span></div>
       <h1>Gallery</h1>
-      <p>Lab life, conferences, events, and the people behind the research.</p>
+      <p>Lab life, conferences, events, administrative milestones, and academic achievements.</p>
     </div>
   </div>
 
+  <!-- FILTER BUTTONS -->
   <div class="filter-bar">
     <div class="filter-inner">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="lab">Lab</button>
       <button class="filter-btn" data-filter="conference">Conferences</button>
+      <button class="filter-btn" data-filter="admin">Administration</button>
+      <button class="filter-btn" data-filter="award">Awards</button>
       <button class="filter-btn" data-filter="event">Events</button>
-      <button class="filter-btn" data-filter="students">Students</button>
     </div>
   </div>
 
   <div class="content">
-    <div class="gallery-section">
-      <h2>Laboratory</h2>
-      <div class="gallery-section-underline"></div>
-      <div class="gallery-grid">
-        <div class="gallery-item" data-category="lab"
-          onclick="openLightbox('Images/gallery1.jpg','Nanobioscience Lab — synthesis and characterisation work')">
-          <img src="Images/gallery1.jpg" alt="Lab work">
-          <div class="caption">
-            <div class="caption-cat">Lab</div>
-            <div class="caption-title">Nanobioscience Lab — synthesis &amp; characterisation</div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="lab"
-          onclick="openLightbox('Images/gallery2.jpg','Aquatic Biology Lab — fish sample processing')">
-          <img src="Images/gallery2.jpg" alt="Lab work">
-          <div class="caption">
-            <div class="caption-cat">Lab</div>
-            <div class="caption-title">Aquatic Biology Lab — fish sample processing</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
+    <!-- CONFERENCES & WORKSHOPS SECTION -->
     <div class="gallery-section">
       <h2>Conferences &amp; Workshops</h2>
       <div class="gallery-section-underline"></div>
       <div class="gallery-grid">
         <div class="gallery-item" data-category="conference"
-          onclick="openLightbox('Images/gallery3.jpg','MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (June 2025)')">
-          <img src="Images/gallery3.jpg" alt="IIT Guwahati Workshop">
+          onclick="openLightbox('Images/highlight4.jpg','SERB International Conference — December, 2024')">
+          <img src="Images/highlight4.jpg" alt="SERB International Conference">
           <div class="caption">
             <div class="caption-cat">Conference</div>
-            <div class="caption-title">MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (2025)</div>
+            <div class="caption-title">SERB International Conference — December, 2024</div>
           </div>
         </div>
         <div class="gallery-item" data-category="conference"
-          onclick="openLightbox('Images/gallery4.jpg','Invited Speaker — SERB Nanomaterials Conference, KLEF, Guntur (December 2024)')">
-          <img src="Images/gallery4.jpg" alt="SERB Conference KLEF">
+          onclick="openLightbox('Images/highlight7.jpeg','International Conference on Biomaterials and Biodevices — November, 2024')">
+          <img src="Images/highlight7.jpeg" alt="International Conference on Biomaterials and Biodevices">
           <div class="caption">
             <div class="caption-cat">Conference</div>
-            <div class="caption-title">Invited Speaker — SERB Nanomaterials Conference, KLEF (2024)</div>
+            <div class="caption-title">International Conference on "Biomaterials and Biodevices" — November, 2024</div>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="conference"
+          onclick="openLightbox('Images/highlight5.jpeg','National Conference on Quantum Biotechnology at IIT- Bombay')">
+          <img src="Images/highlight5.jpeg" alt="Quantum Biotechnology Conference IIT-Bombay">
+          <div class="caption">
+            <div class="caption-cat">Conference</div>
+            <div class="caption-title">National Conference on Quantum Biotechnology at IIT- Bombay</div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- ADMINISTRATION SECTION -->
     <div class="gallery-section">
-      <h2>Events</h2>
+      <h2>Administration & Roles</h2>
       <div class="gallery-section-underline"></div>
       <div class="gallery-grid">
-        <div class="gallery-item" data-category="event"
-          onclick="openLightbox('Images/gallery5.jpg','Aahaar Mahotsav — World Food Day 2025, Adikavi Nannaya University')">
-          <img src="Images/gallery5.jpg" alt="Aahaar Mahotsav">
+        <div class="gallery-item" data-category="admin"
+          onclick="openLightbox('Images/highlight6.jpeg','Dean, Examinations — January 2025')">
+          <img src="Images/highlight6.jpeg" alt="Dean, Examinations">
           <div class="caption">
-            <div class="caption-cat">Event</div>
-            <div class="caption-title">Aahaar Mahotsav — World Food Day, AKNU (Oct 2025)</div>
-          </div>
-        </div>
-        <div class="gallery-item" data-category="event"
-          onclick="openLightbox('Images/gallery6.jpg','National Seminar — Recent Trends in Applied Biology, AKNU 2018')">
-          <img src="Images/gallery6.jpg" alt="National Seminar">
-          <div class="caption">
-            <div class="caption-cat">Event</div>
-            <div class="caption-title">National Seminar on Applied Biology — AKNU (2018)</div>
+            <div class="caption-cat">Administration</div>
+            <div class="caption-title">Dean, Examinations — January 2025</div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- AWARDS & RECOGNITION SECTION -->
     <div class="gallery-section">
-      <h2>Students &amp; Research Team</h2>
+      <h2>Awards & Recognition</h2>
       <div class="gallery-section-underline"></div>
       <div class="gallery-grid">
-        <div class="gallery-item" data-category="students"
-          onclick="openLightbox('Images/gallery7.jpg','Ph.D. Award — Dr. Chokkakula Santosh (2016)')">
-          <img src="Images/gallery7.jpg" alt="PhD scholar">
+        <div class="gallery-item" data-category="award"
+          onclick="openLightbox('Images/highlight2.jpeg','MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (June 2025)')">
+          <img src="Images/highlight2.jpeg" alt="IIT Guwahati Workshop">
           <div class="caption">
-            <div class="caption-cat">Students</div>
-            <div class="caption-title">Ph.D. Award — Dr. Chokkakula Santosh (2016)</div>
+            <div class="caption-cat">Award</div>
+            <div class="caption-title">MeitY-INUP-i2i Workshop — Best Poster Award, IIT Guwahati (2025)</div>
           </div>
         </div>
-        <div class="gallery-item" data-category="students"
-          onclick="openLightbox('Images/gallery8.jpg','Research Team — Dept. of Zoology, AKNU')">
-          <img src="Images/gallery8.jpg" alt="Research team">
+      </div>
+    </div>
+
+    <!-- EVENTS SECTION -->
+    <div class="gallery-section">
+      <h2>Events & Functions</h2>
+      <div class="gallery-section-underline"></div>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="event"
+          onclick="openLightbox('Images/highlight3.jpg','Organizer, Aahaar Mahotsav — October, 2025')">
+          <img src="Images/highlight3.jpg" alt="Organizer, Aahaar Mahotsav">
           <div class="caption">
-            <div class="caption-cat">Students</div>
-            <div class="caption-title">Research Team — Dept. of Zoology, AKNU</div>
+            <div class="caption-cat">Event</div>
+            <div class="caption-title">Organizer, Aahaar Mahotsav — October, 2025</div>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="event"
+          onclick="openLightbox('Images/highlight1.jpeg','Anchor at Adikavi Nannaya University Convocation — 2024')">
+          <img src="Images/highlight1.jpeg" alt="Anchor at Convocation">
+          <div class="caption">
+            <div class="caption-cat">Event</div>
+            <div class="caption-title">Anchor at Adikavi Nannaya University Convocation — 2024</div>
           </div>
         </div>
       </div>
@@ -619,6 +622,7 @@
       </div>
     </div>
   </footer>
+
   <script>
     document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
 
@@ -642,12 +646,14 @@
       document.getElementById('lightbox').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
+
     function closeLightbox(e) {
       if (!e || e.target.id === 'lightbox' || e.target.closest('.lightbox-close')) {
         document.getElementById('lightbox').classList.remove('open');
         document.body.style.overflow = '';
       }
     }
+
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') }); });
   </script>
 </body>
