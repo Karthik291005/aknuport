@@ -1033,6 +1033,255 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ===== RESPONSIVE: ACADEMIC CREDENTIALS + WORK EXPERIENCE ===== */
+
+    .exp-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Tablets / small laptops — tighten the table before it gets cramped */
+    @media (max-width: 900px) {
+      .exp-table thead th,
+      .exp-table td {
+        padding: 0.85rem 1rem;
+      }
+
+      .exp-table td {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      /* Timeline: pull it in so long degree titles don't wrap awkwardly */
+      .timeline {
+        padding-left: 1.75rem;
+      }
+
+      .timeline::before {
+        left: 6px;
+      }
+
+      .timeline-dot {
+        left: -1.75rem;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        border-width: 2.5px;
+      }
+
+      .timeline-item {
+        margin-bottom: 1.85rem;
+      }
+
+      .timeline-title {
+        font-size: 0.95rem;
+        line-height: 1.35;
+      }
+
+      .timeline-sub {
+        font-size: 0.82rem;
+      }
+
+      /* Work experience: table -> stacked cards */
+      .exp-table-wrap {
+        overflow-x: visible;
+      }
+
+      .exp-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        box-shadow: none;
+        border-radius: 0;
+        overflow: visible;
+      }
+
+      .exp-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      .exp-table tbody,
+      .exp-table tbody tr,
+      .exp-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .exp-table tbody tr,
+      .exp-table tbody tr:nth-child(even),
+      .exp-table tbody tr:nth-child(odd) {
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--copper);
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        padding: 0.4rem 0;
+        margin-bottom: 1rem;
+      }
+
+      .exp-table tbody tr:last-child {
+        margin-bottom: 0;
+      }
+
+      .exp-table td {
+        border: none;
+        padding: 0.45rem 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      .exp-table td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        margin-bottom: 2px;
+      }
+
+      .exp-table td:first-child {
+        white-space: normal;
+      }
+
+      .exp-table td:nth-child(2) {
+        font-family: 'Lora', serif;
+        font-size: 0.98rem;
+        font-weight: 600;
+        color: var(--green);
+      }
+
+      /* Section rhythm on small screens */
+      section {
+        padding: 3.25rem 1.15rem;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.55rem;
+      }
+
+      .section-header p {
+        font-size: 0.88rem;
+      }
+
+      .academic-work-grid {
+        gap: 2.25rem;
+      }
+    }
+
+    /* Phones */
+    @media (max-width: 480px) {
+      .nav-inner {
+        padding: 0 1rem;
+      }
+
+      .nav-brand-text .name {
+        font-size: 0.95rem;
+      }
+
+      .nav-brand-text .dept {
+        font-size: 0.66rem;
+      }
+
+      .nav-brand img {
+        height: 38px;
+        width: 38px;
+      }
+
+      .hero {
+        padding: 3rem 1.15rem 3.25rem;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1.25rem 2rem;
+      }
+
+      section {
+        padding: 2.75rem 1rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Timeline: dots sit inline with the rail */
+      .timeline {
+        padding-left: 1.5rem;
+      }
+
+      .timeline::before {
+        left: 5px;
+      }
+
+      .timeline-dot {
+        left: -1.5rem;
+        width: 13px;
+        height: 13px;
+        border-width: 2.5px;
+        top: 6px;
+      }
+
+      .timeline-year {
+        font-size: 0.72rem;
+      }
+
+      .timeline-title {
+        font-size: 0.92rem;
+      }
+
+      .exp-table td {
+        padding: 0.4rem 0.9rem;
+        font-size: 0.86rem;
+      }
+
+      .exp-table td:nth-child(2) {
+        font-size: 0.94rem;
+      }
+
+      .admin-item {
+        gap: 0.85rem;
+        padding: 0.8rem 0;
+      }
+
+      .admin-role {
+        font-size: 0.84rem;
+      }
+
+      .admin-list {
+        max-height: none;
+        padding-right: 0;
+      }
+
+      .award-card {
+        padding: 1.25rem 1.1rem;
+        gap: 0.9rem;
+        min-height: 0;
+      }
+
+      .footer-photo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .site-footer {
+        margin-top: 48px;
+      }
+    }
   </style>
 </head>
 
@@ -1288,7 +1537,7 @@
             <div class="underline"></div>
             <p>Professional Experience at Adikavi Nannaya University.</p>
           </div>
-          <div style="overflow-x:auto;">
+          <div class="exp-table-wrap">
             <table class="exp-table">
               <thead>
                 <tr>
@@ -1299,19 +1548,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>2022 – Present</td>
-                  <td>Professor, Department of Zoology</td>
-                  <td>Adikavi Nannaya University</td>
+                  <td data-label="Period">2022 – Present</td>
+                  <td data-label="Designation">Professor, Department of Zoology</td>
+                  <td data-label="Institution">Adikavi Nannaya University</td>
                 </tr>
                 <tr>
-                  <td>2019 – 2022</td>
-                  <td>Associate Professor, Department of Zoology</td>
-                  <td>Adikavi Nannaya University</td>
+                  <td data-label="Period">2019 – 2022</td>
+                  <td data-label="Designation">Associate Professor, Department of Zoology</td>
+                  <td data-label="Institution">Adikavi Nannaya University</td>
                 </tr>
                 <tr>
-                  <td>2007 – 2019</td>
-                  <td>Assistant Professor, Department of Zoology</td>
-                  <td>Adikavi Nannaya University</td>
+                  <td data-label="Period">2007 – 2019</td>
+                  <td data-label="Designation">Assistant Professor, Department of Zoology</td>
+                  <td data-label="Institution">Adikavi Nannaya University</td>
                 </tr>
               </tbody>
             </table>
@@ -1744,4 +1993,4 @@
   </script>
 </body>
 
-</html>
+</html>s
